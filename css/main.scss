@@ -1,0 +1,70 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+
+
+// Our variables
+$text-color:       #2a2c2b;
+$background-color: #ffffff;
+$brand-color:      #D94700;
+$heading-color:    #122C42;
+
+$grey-color:       #2A2C2B;
+$grey-color-light: lighten(#000, 46.7%);
+$grey-color-dark:  lighten(#000, 13.5%);
+
+$base-font-family: "Lato", "Helvetica Neue", Helvetica, Sans-Serif;
+$base-font-size:   20px;
+$base-font-weight: 300;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$heading-font-family: "Playfair Display", Georgia, Serif;
+$heading-font-weight:    700;
+$heading-line-height:    1.1;
+
+$link-color: $brand-color;
+$link-hover-color: #BB1F28;
+
+$spacing-unit:    30px;
+$h1-font-size:		$base-font-size * 3;
+$h2-font-size:		$base-font-size * 2;
+$h3-font-size:		$base-font-size * 1.5;
+
+// Width of the content area
+$content-width:    1024px;
+
+$on-phone:          600px;
+$on-tablet:        1024px;
+
+
+
+// Use media queries like this:
+// @include media-query($on-phone) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+@mixin min-media-query($device) {
+    @media screen and (min-width: $device) {
+        @content;
+    }
+}
+
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "base",
+        "layout",
+        "syntax-highlighting"
+;
