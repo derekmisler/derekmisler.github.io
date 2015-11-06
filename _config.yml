@@ -7,7 +7,7 @@
 
 # Site settings
 title: Project Title
-titleurl: # repository name, assuming gh-pages is set up
+titleurl: derekmisler.github.io # repository name, assuming gh-pages is set up
 fullname: Derek Misler
 url: "http://www.derekmisler.com"
 email: derekmisler@gmail.com
