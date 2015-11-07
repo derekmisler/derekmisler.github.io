@@ -1,60 +1,49 @@
 @mixin columnCalc($columns) { 
-	width: -webkit-calc((100% / 12) * #{$columns} - #{$spacing-unit});
-	width: 				 calc((100% / 12) * #{$columns} - #{$spacing-unit});
+  width: -webkit-calc((100% / #{$block-grid}) * #{$columns} - #{$spacing-unit});
+  width: 				 calc((100% / #{$block-grid}) * #{$columns} - #{$spacing-unit});
+}
+@mixin columns-html-classes() {
+  @for $i from 1 through $block-grid {
+    .columns-#{$i} {
+      @include columnCalc($i)
+    }
+  }
 }
 
-.column,
-.columns {
-	width: 100%;
-	float: left;
-	box-sizing: border-box;
+[class*="columns-"] {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
 }
 
 /* For devices larger than 600px */
 @include min-media-query($on-phone) {
-	.column,
-	.columns {
-		margin-left: $spacing-unit;
-	}
-	.column:first-child,
-	.columns:first-child {
-		margin-left: 0;
-	}
-	.column:last-child,
-	.columns:last-child {
-		margin-right: 0;
-		float: right;
-	}
-	.one.column,
-	.one.columns			{ @include columnCalc(1); }
-	.two.columns			{ @include columnCalc(2); }
-	.three.columns		{ @include columnCalc(3); }
-	.four.columns			{ @include columnCalc(4); }
-	.five.columns			{ @include columnCalc(5); }
-	.six.columns			{ @include columnCalc(6); }
-	.seven.columns		{ @include columnCalc(7); }
-	.eight.columns		{ @include columnCalc(8); }
-	.nine.columns			{ @include columnCalc(9); }
-	.ten.columns			{ @include columnCalc(10); }
-	.eleven.columns		{ @include columnCalc(11); }
-	.twelve.columns		{ @include columnCalc(12); margin-left: 0; }
+  [class*="columns-"] {
+    margin-left: $spacing-unit;
+  }
+  [class*="columns-"]:first-child {
+    margin-left: 0;
+  }
+  [class*="columns-"]:last-child {
+    margin-right: 0;
+  }
+  @include columns-html-classes();
 }
 
 /**
  * Site header
  */
 .site-header {
-	border-top: 5px solid $brand-color;
-	border-bottom: 1px solid $brand-color;
-	height: $h1-font-size;
-	padding: $spacing-unit 0;
-}
-
-.site-nav {
-	line-height: $h1-font-size;
-	a {
-		line-height: $heading-line-height;
-	}
+  border-bottom: 1px solid $brand-color;
+  .site-title {
+    text-align: center;
+    padding: $spacing-unit 0;
+  }
+  .site-subtitle {
+  }
+  .site-project-link {
+    text-align: right;
+  }
 }
 
 
@@ -62,99 +51,66 @@
  * Site footer
  */
 .site-footer {
-	border-top: 1px solid $brand-color;
-	padding: $spacing-unit 0;
-	font-size: 15px;
-}
-
-.footer-heading {
-	font-size: 18px;
-	margin-bottom: $spacing-unit / 2;
-	@extend %clearfix;
+  border-top: 1px solid $brand-color;
+  font-size: $small-font-size;
 }
 
 .contact-list,
 .social-media-list {
-	list-style: none;
-	margin-left: 0;
+  list-style: none;
+  margin-left: 0;
 }
-
-
-
 
 /**
  * Page content
  */
 .page-content {
-	padding: $spacing-unit 0;
+  padding: $spacing-unit 0;
 }
 
 .page-heading {
-	font-size: 20px;
-}
-
-.post-list {
-	margin-left: 0;
-	list-style: none;
-
-	> li {
-		margin-bottom: $spacing-unit;
-	}
-}
-
-.post-meta {
-	font-size: $small-font-size;
-	color: $grey-color;
-}
-
-.post-link {
-	display: block;
-	font-size: 24px;
+  
 }
 
 
+#tumblr img{
+  opacity: 0;
+}
 
 /**
- * Posts
+ * Block Grid
  */
-.post-header {
-	margin-bottom: $spacing-unit;
+
+@mixin block-grid($per-row) {
+  > li {
+    display: block;
+    float: left;
+    height: auto;
+    padding: 0 ($spacing-unit/2) ($spacing-unit/2);
+    box-sizing: border-box;
+    width: 100% / $per-row;
+    &:nth-of-type(1n) { clear: none; }
+    &:nth-of-type(#{$per-row}n+1) { clear: both; }
+  }
+}
+@mixin block-grid-html-classes() {
+  @for $i from 1 through $block-grid {
+    .block-grid-#{($i)} {
+      @include block-grid($i);
+    }
+  }
 }
 
-.post-title {
-	font-size: 42px;
-	letter-spacing: -1px;
-	line-height: 1;
-
-	@include media-query($on-tablet) {
-		font-size: 36px;
-	}
+[class*="block-grid-"] {
+  display: block;
+  padding: 0;
+  margin: 0 (-($spacing-unit/2));
+  @extend %clearfix;
+  > li {
+    width: 100%;
+  }
 }
 
-.post-content {
-	margin-bottom: $spacing-unit;
-
-	h2 {
-		font-size: 32px;
-
-		@include media-query($on-tablet) {
-			font-size: 28px;
-		}
-	}
-
-	h3 {
-		font-size: 26px;
-
-		@include media-query($on-tablet) {
-			font-size: 22px;
-		}
-	}
-
-	h4 {
-		font-size: 20px;
-
-		@include media-query($on-tablet) {
-			font-size: 18px;
-		}
-	}
+@include min-media-query($on-phone) {
+  @include block-grid-html-classes();
 }

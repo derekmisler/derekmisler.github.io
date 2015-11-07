@@ -6,13 +6,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Selected Works | This project is maintained by Derek Misler.</title>
-	<meta name="description" content="Derek is a front-end developer with a design background and over 10 years of experience.  He is also available for hire. Click here to learn more.
-">
+	<title>Tumblr API | This project is maintained by Derek Misler.</title>
+	<meta name="description" content="    ">
 	
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,300italic,700,700italic|Playfair+Display:700" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="//">
+	<link rel="canonical" href="//tumblr-api">
 	<link rel="alternate" type="application/rss+xml" title="Selected Works" href="//feed.xml">
 </head>
 
@@ -40,6 +39,8 @@
 	<div class="wrapper">
 		<h4 class="site-subtitle columns-8">These projects are maintained by <a href="http://www.derekmisler.com" target="_blank">Derek Misler</a>.</h4>
     
+    <h4 class="site-project-link columns-4"><a href="https://github.com/derekmisler/tumblr-api" target="_blank">View this project on GitHub</a></h4>
+    
 	</div>
 
 </header>
@@ -47,41 +48,50 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
-  <div>
-    <h2 class="page-heading columns-10">Projects</h2>
-    <h6 class="rss-subscribe columns-2">subscribe <a href="/feed.xml">via RSS</a></h6>
-  </div>
-  <ul class="block-grid-2 post-list">
-    
-      <li>
-        <figure class="effect">
-          <img src="/images/tumblr-api.jpg" alt="An example for the PR team for pulling in user-generated content from social media. Using the IFTTT service, they're able 'like' photos on Instagram and Twitter in order to pull them into a catch-all Tumblr account which will feed into the primary website.">
-          <figcaption>
-            <h3>Tumblr API</h3>
-            <p>An example for the PR team for pulling in user-generated content from social media. Using the IFTTT service, they're able 'like' photos on Instagram and Twitter in order to pull them into a catch-all Tumblr account which will feed into the primary website.</p>
-            <p><strong>Skills Utilized:</strong> <br>TumblrAPI,jQuery,User-GeneratedContent</p>
-            <a href="/tumblr-api">View more</a>
-          </figcaption>
-        </figure>
-      </li>
-    
-      <li>
-        <figure class="effect">
-          <img src="/images/music-scene.jpg" alt="This was an Angular app built to overcome limitations in the CMS. It pulls in editorial content into the randomly-sorted widgets. The design of the widgets eventually became the inspiration for the widgets in the new ExploreAsheville.com.">
-          <figcaption>
-            <h3>Music Scene App</h3>
-            <p>This was an Angular app built to overcome limitations in the CMS. It pulls in editorial content into the randomly-sorted widgets. The design of the widgets eventually became the inspiration for the widgets in the new ExploreAsheville.com.</p>
-            <p><strong>Skills Utilized:</strong> <br>Angular,jQuery,HTML5/CSS3</p>
-            <a href="/music-scene">View more</a>
-          </figcaption>
-        </figure>
-      </li>
-    
-  </ul>
+        <section id="tumblr">
+  <h4 class="title"></h4>
+  <ul class="block-grid-4"></ul>
+</section>
 
-</div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">'#tumblr'</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">'img'</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">delay</span><span class="p">((</span><span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">).</span><span class="nx">fadeTo</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span></code></pre></figure>
 
+
+<script>
+  $.ajax({
+    url: "http://api.tumblr.com/v2/blog/montanamoment.tumblr.com/info?api_key=v6y8zw1aQk66fJevXGoFyv3BHfURcphvUD6hl88BB3yVyLKVm6",
+    dataType: 'jsonp',
+    success: function(info){
+      console.log('title success');
+      $("#tumblr .title").html(info.response.blog.title);
+    }
+  });
+  $.ajax({
+    url: "http://api.tumblr.com/v2/blog/montanamoment.tumblr.com/posts?api_key=v6y8zw1aQk66fJevXGoFyv3BHfURcphvUD6hl88BB3yVyLKVm6",
+    dataType: 'jsonp',
+    success: function(posts){
+      console.log('image success');
+      var postings = posts.response.posts;
+      var text = '';
+      for (var i in postings) {
+        var p = postings[i];
+        var image = p.photos[0].alt_sizes[2];
+        text += '<li><a href="' + p.post_url + '" target="_blank"><img class="" src=' + image.url +'></a></li>';
+      }
+      $('#tumblr ul').append(text);
+      $(function() {
+        $('#tumblr').find('img').each(function(i) {
+          $(this).delay((i++) * 100).fadeTo(200, 1);
+        });
+      });
+
+    }
+  });
+
+</script>
       </div>
     </div>
 
