@@ -45,56 +45,10 @@ $on-tablet:        1024px;
 
 
 
-// Use media queries like this:
-// @include media-query($on-phone) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-  @media screen and (max-width: $device) {
-    @content;
-  }
-}
-
-@mixin min-media-query($device) {
-  @media screen and (min-width: $device) {
-    @content;
-  }
-}
-
-@mixin opacity($opacity) {
-  opacity: $opacity;
-  // IE8 filter
-  $opacity-ie: ($opacity * 100);
-  filter: alpha(opacity=#{$opacity-ie});
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$opacity-ie})";
-}
-@mixin scale($ratio) {
-  -webkit-transform: scale($ratio);
-      -ms-transform: scale($ratio); // IE9 only
-       -o-transform: scale($ratio);
-          transform: scale($ratio);
-}
-@mixin translate3d($x, $y, $z) {
-  -webkit-transform: translate3d($x, $y, $z);
-          transform: translate3d($x, $y, $z);
-}
-@mixin transition($transition) {
-  -webkit-transition: $transition;
-       -o-transition: $transition;
-          transition: $transition;
-}
-@mixin backface-visibility($visibility){
-  -webkit-backface-visibility: $visibility;
-     -moz-backface-visibility: $visibility;
-          backface-visibility: $visibility;
-}
-
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
+  "mixins",
   "base",
   "layout",
   "posts",

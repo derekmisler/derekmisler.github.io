@@ -40,9 +40,11 @@
     padding: $spacing-unit 0;
   }
   .site-subtitle {
-    text-align: center;
   }
-  .site-project-link {
+  @include min-media-query($on-phone) {
+    .site-project-link {
+      text-align: right;
+    }
   }
 }
 

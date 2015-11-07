@@ -234,8 +234,9 @@ pre {
   .site-header .site-title {
     text-align: center;
     padding: 30px 0; }
-  .site-header .site-subtitle {
-    text-align: center; }
+  @media screen and (min-width: 600px) {
+    .site-header .site-project-link {
+      text-align: right; } }
 
 /**
  * Site footer
