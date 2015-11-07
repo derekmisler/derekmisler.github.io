@@ -6,8 +6,8 @@
 </description>
     <link>//</link>
     <atom:link href="//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 06 Nov 2015 19:16:17 -0500</pubDate>
-    <lastBuildDate>Fri, 06 Nov 2015 19:16:17 -0500</lastBuildDate>
+    <pubDate>Sat, 07 Nov 2015 11:03:00 -0500</pubDate>
+    <lastBuildDate>Sat, 07 Nov 2015 11:03:00 -0500</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -16,13 +16,6 @@
   &lt;h4 class=&quot;title&quot;&gt;&lt;/h4&gt;
   &lt;ul class=&quot;block-grid-4&quot;&gt;&lt;/ul&gt;
 &lt;/section&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;#tumblr&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;img&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;each&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fadeTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
 
 &lt;script&gt;
   $.ajax({
@@ -51,10 +44,8 @@
           $(this).delay((i++) * 100).fadeTo(200, 1);
         });
       });
-
     }
   });
-
 &lt;/script&gt;</description>
         <pubDate>Fri, 05 Jun 2015 13:43:45 -0400</pubDate>
         <link>//tumblr-api</link>
@@ -64,23 +55,14 @@
         
         <category>API,</category>
         
-        <category>jQuery,</category>
-        
-        <category>User-Generated</category>
-        
-        <category>Content</category>
+        <category>jQuery</category>
         
         
       </item>
     
       <item>
         <title>Music Scene App</title>
-        <description>&lt;section id=&quot;tumblr&quot;&gt;
-  &lt;h4 class=&quot;title&quot;&gt;&lt;/h4&gt;
-  &lt;ul class=&quot;block-grid-4&quot;&gt;&lt;/ul&gt;
-&lt;/section&gt;
-
-</description>
+        <description></description>
         <pubDate>Fri, 05 Jun 2015 13:43:45 -0400</pubDate>
         <link>//music-scene</link>
         <guid isPermaLink="true">//music-scene</guid>

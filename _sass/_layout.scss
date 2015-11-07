@@ -40,9 +40,9 @@
     padding: $spacing-unit 0;
   }
   .site-subtitle {
+    text-align: center;
   }
   .site-project-link {
-    text-align: right;
   }
 }
 
@@ -72,9 +72,14 @@
   
 }
 
-
-#tumblr img{
-  opacity: 0;
+.description {
+  @extend %clearfix;
+  display: block;
+  border-bottom: 1px solid $brand-color;
+  padding: $spacing-unit;
+  padding-top: 0;
+  margin: 0 0 $spacing-unit;
+  font-style: italic;
 }
 
 /**
@@ -114,3 +119,10 @@
 @include min-media-query($on-phone) {
   @include block-grid-html-classes();
 }
+
+
+
+#tumblr img{
+  opacity: 0;
+}
+

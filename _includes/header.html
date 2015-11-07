@@ -1,16 +1,20 @@
 <header class="site-header">
 
-	<div class="wrapper">
+  <div class="wrapper">
 
-    <h1 class="site-title"><a href="{{ site.url }}">{{ site.title }}</a></h1>
-
-	</div>
-
-	<div class="wrapper">
-		<h4 class="site-subtitle columns-8">These projects are maintained by <a href="http://www.derekmisler.com" target="_blank">{{ site.fullname }}</a>.</h4>
-    {% if page.permalink %}
-    <h4 class="site-project-link columns-4"><a href="https://github.com/{{ site.github_username }}/{{ page.permalink }}" target="_blank">View this project on GitHub</a></h4>
+    <h1 class="site-title">
+    <a href="{{ site.url }}">
+    {% if page.title %}
+      {{ page.title }}
+    {% else %}
+      {{ site.title }}
     {% endif %}
-	</div>
+    </a>
+    </h1>
+  </div>
+
+  <div class="wrapper">
+    <h4 class="site-subtitle">These projects are maintained by <a href="http://www.derekmisler.com" target="_blank">{{ site.fullname }}</a>.</h4>
+  </div>
 
 </header>
