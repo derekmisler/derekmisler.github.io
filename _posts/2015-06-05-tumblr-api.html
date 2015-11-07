@@ -4,8 +4,40 @@ title:  "Tumblr API"
 description: "An example for the PR team for pulling in user-generated content from social media. Using the IFTTT service, they're able 'like' photos on other social channels, which will pull them into a catch-all Tumblr account that feeds into the primary website."
 date:   2015-06-05 13:43:45 -0400
 permalink: tumblr-api
-tags: Tumblr API, jQuery
+tags: Tumblr API, jQuery, Ajax, JSON
 ---
+
+<p>Knowing the posts would only ever be images, I kept things simple with just an ajax call for the posts.</p>
+
+{% highlight javascript %}
+$.ajax({
+  url: "http://api.tumblr.com/v2/blog/[tumblr name]/posts?api_key=[api key]",
+  dataType: 'jsonp',
+  success: function(info){
+    ...
+  }
+});
+{% endhighlight %}
+
+<p>The rest is just appending each post to a pre-styled grid, then, for effect, fading the images one-by-one into view.</p>
+
+{% highlight javascript %}
+var postings = posts.response.posts;
+var text = '';
+for (var i in postings) {
+  var p = postings[i];
+  var image = p.photos[0].alt_sizes[2];
+  text += '[image wrapped in the URL to the individual post]';
+}
+$('#tumblr ul').append(text);
+$(function() {
+  $('#tumblr').find('img').each(function(i) {
+    $(this).delay((i++) * 100).fadeTo(200, 1);
+  });
+});
+{% endhighlight %}
+
+<h4>Results:</h4>
 
 <section id="tumblr">
   <h4 class="title"></h4>
@@ -14,18 +46,10 @@ tags: Tumblr API, jQuery
 
 <script>
   $.ajax({
-    url: "http://api.tumblr.com/v2/blog/montanamoment.tumblr.com/info?api_key=v6y8zw1aQk66fJevXGoFyv3BHfURcphvUD6hl88BB3yVyLKVm6",
-    dataType: 'jsonp',
-    success: function(info){
-      console.log('title success');
-      $("#tumblr .title").html(info.response.blog.title);
-    }
-  });
-  $.ajax({
     url: "http://api.tumblr.com/v2/blog/montanamoment.tumblr.com/posts?api_key=v6y8zw1aQk66fJevXGoFyv3BHfURcphvUD6hl88BB3yVyLKVm6",
     dataType: 'jsonp',
     success: function(posts){
-      console.log('image success');
+      console.log('success');
       var postings = posts.response.posts;
       var text = '';
       for (var i in postings) {
