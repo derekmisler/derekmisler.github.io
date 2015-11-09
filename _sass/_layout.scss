@@ -93,7 +93,7 @@
     display: block;
     float: left;
     height: auto;
-    padding: 0 ($spacing-unit/2) ($spacing-unit/2);
+    padding: 0 ($spacing-unit/2) $spacing-unit;
     box-sizing: border-box;
     width: 100% / $per-row;
     &:nth-of-type(1n) { clear: none; }
@@ -122,9 +122,4 @@
   @include block-grid-html-classes();
 }
 
-
-
-#tumblr img{
-  opacity: 0;
-}
 

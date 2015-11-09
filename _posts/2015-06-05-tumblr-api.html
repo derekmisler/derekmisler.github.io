@@ -30,10 +30,9 @@ for (var i in postings) {
   text += '[image wrapped in the URL to the individual post]';
 }
 $('#tumblr ul').append(text);
-$(function() {
-  $('#tumblr').find('img').each(function(i) {
-    $(this).delay((i++) * 100).fadeTo(200, 1);
-  });
+...
+thumbnail.each(function(i) {
+  $(this).delay((i++) * 100).fadeTo(200, 1);
 });
 {% endhighlight %}
 
@@ -55,13 +54,14 @@ $(function() {
       for (var i in postings) {
         var p = postings[i];
         var image = p.photos[0].alt_sizes[2];
-        text += '<li><a href="' + p.post_url + '" target="_blank"><img class="" src=' + image.url +'></a></li>';
+        text += '<li><a href="' + p.post_url + '" target="_blank" style="background-image: url(' + image.url + ')"></a></li>';
       }
       $('#tumblr ul').append(text);
-      $(function() {
-        $('#tumblr').find('img').each(function(i) {
-          $(this).delay((i++) * 100).fadeTo(200, 1);
-        });
+      var thumbnail = $('#tumblr').find('a'),
+      thumbnailWidth = thumbnail.width();
+      thumbnail.height(thumbnailWidth);
+      thumbnail.each(function(i) {
+        $(this).delay((i++) * 100).fadeTo(200, 1);
       });
     }
   });

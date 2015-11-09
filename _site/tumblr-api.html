@@ -11,8 +11,8 @@
 	
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,300italic,700,700italic|Playfair+Display:700" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="//tumblr-api">
-	<link rel="alternate" type="application/rss+xml" title="Selected Works" href="//feed.xml">
+	<link rel="canonical" href="http://derekmisler.github.io/tumblr-api">
+	<link rel="alternate" type="application/rss+xml" title="Selected Works" href="http://derekmisler.github.io/feed.xml">
 </head>
 
 
@@ -35,7 +35,7 @@
   <div class="wrapper">
 
     <h1 class="site-title">
-    <a href="/">
+    <a href="http://derekmisler.github.io">
     
       Tumblr API
     
@@ -83,10 +83,9 @@
   <span class="nx">text</span> <span class="o">+=</span> <span class="s1">'[image wrapped in the URL to the individual post]'</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">'#tumblr ul'</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
-<span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s1">'#tumblr'</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">'img'</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">delay</span><span class="p">((</span><span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">).</span><span class="nx">fadeTo</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-  <span class="p">});</span>
+<span class="p">...</span>
+<span class="nx">thumbnail</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">delay</span><span class="p">((</span><span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">).</span><span class="nx">fadeTo</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 <span class="p">});</span></code></pre></figure>
 
 <h4>Results:</h4>
@@ -107,13 +106,14 @@
       for (var i in postings) {
         var p = postings[i];
         var image = p.photos[0].alt_sizes[2];
-        text += '<li><a href="' + p.post_url + '" target="_blank"><img class="" src=' + image.url +'></a></li>';
+        text += '<li><a href="' + p.post_url + '" target="_blank" style="background-image: url(' + image.url + ')"></a></li>';
       }
       $('#tumblr ul').append(text);
-      $(function() {
-        $('#tumblr').find('img').each(function(i) {
-          $(this).delay((i++) * 100).fadeTo(200, 1);
-        });
+      var thumbnail = $('#tumblr').find('a'),
+      thumbnailWidth = thumbnail.width();
+      thumbnail.height(thumbnailWidth);
+      thumbnail.each(function(i) {
+        $(this).delay((i++) * 100).fadeTo(200, 1);
       });
     }
   });

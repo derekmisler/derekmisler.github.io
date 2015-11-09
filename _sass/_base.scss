@@ -146,6 +146,11 @@ code {
   border: 1px solid $heading-color;
   border-radius: 3px;
   background-color: lighten($heading-color, 75%);
+  @include transition(all .35s);
+  &:hover {
+    border-radius: 0;
+    border-color: $brand-color;
+  }
 }
 
 code {

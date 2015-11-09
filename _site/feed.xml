@@ -4,10 +4,10 @@
     <title>Selected Works</title>
     <description>Derek is a front-end developer with a design background and over 10 years of experience.  He is also available for hire. Click here to learn more.
 </description>
-    <link>//</link>
-    <atom:link href="//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 07 Nov 2015 11:46:33 -0500</pubDate>
-    <lastBuildDate>Sat, 07 Nov 2015 11:46:33 -0500</lastBuildDate>
+    <link>http://derekmisler.github.io/</link>
+    <atom:link href="http://derekmisler.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 09 Nov 2015 10:56:49 -0500</pubDate>
+    <lastBuildDate>Mon, 09 Nov 2015 10:56:49 -0500</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -32,10 +32,9 @@
   &lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;[image wrapped in the URL to the individual post]&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;#tumblr ul&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;#tumblr&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;img&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;each&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fadeTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;thumbnail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;each&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fadeTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h4&gt;Results:&lt;/h4&gt;
@@ -56,20 +55,21 @@
       for (var i in postings) {
         var p = postings[i];
         var image = p.photos[0].alt_sizes[2];
-        text += &#39;&lt;li&gt;&lt;a href=&quot;&#39; + p.post_url + &#39;&quot; target=&quot;_blank&quot;&gt;&lt;img class=&quot;&quot; src=&#39; + image.url +&#39;&gt;&lt;/a&gt;&lt;/li&gt;&#39;;
+        text += &#39;&lt;li&gt;&lt;a href=&quot;&#39; + p.post_url + &#39;&quot; target=&quot;_blank&quot; style=&quot;background-image: url(&#39; + image.url + &#39;)&quot;&gt;&lt;/a&gt;&lt;/li&gt;&#39;;
       }
       $(&#39;#tumblr ul&#39;).append(text);
-      $(function() {
-        $(&#39;#tumblr&#39;).find(&#39;img&#39;).each(function(i) {
-          $(this).delay((i++) * 100).fadeTo(200, 1);
-        });
+      var thumbnail = $(&#39;#tumblr&#39;).find(&#39;a&#39;),
+      thumbnailWidth = thumbnail.width();
+      thumbnail.height(thumbnailWidth);
+      thumbnail.each(function(i) {
+        $(this).delay((i++) * 100).fadeTo(200, 1);
       });
     }
   });
 &lt;/script&gt;</description>
         <pubDate>Fri, 05 Jun 2015 13:43:45 -0400</pubDate>
-        <link>//tumblr-api</link>
-        <guid isPermaLink="true">//tumblr-api</guid>
+        <link>http://derekmisler.github.io/tumblr-api</link>
+        <guid isPermaLink="true">http://derekmisler.github.io/tumblr-api</guid>
         
         <category>Tumblr</category>
         
@@ -86,16 +86,18 @@
     
       <item>
         <title>Music Scene App</title>
-        <description></description>
+        <description>&lt;link href=&quot;https://raw.githubusercontent.com/derekmisler/Music-Scene/master/css/music.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</description>
         <pubDate>Fri, 05 Jun 2015 13:43:45 -0400</pubDate>
-        <link>//music-scene</link>
-        <guid isPermaLink="true">//music-scene</guid>
+        <link>http://derekmisler.github.io/music-scene</link>
+        <guid isPermaLink="true">http://derekmisler.github.io/music-scene</guid>
         
         <category>Angular,</category>
         
         <category>jQuery,</category>
         
-        <category>HTML5/CSS3</category>
+        <category>HTML5/CSS3,</category>
+        
+        <category>SVG</category>
         
         
       </item>
