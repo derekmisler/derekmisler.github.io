@@ -50,12 +50,10 @@ figure {
     figcaption {
       text-align: left;
       @include opacity(0);
-      @include scale(1.1);
       @include transition(all .35s);
       &:hover,
       &:focus{
         @include opacity(1);
-        @include scale(1);    	    
       }
     }
     h3 {
