@@ -6,8 +6,8 @@
 </description>
     <link>http://derekmisler.github.io/</link>
     <atom:link href="http://derekmisler.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 09 Nov 2015 10:56:49 -0500</pubDate>
-    <lastBuildDate>Mon, 09 Nov 2015 10:56:49 -0500</lastBuildDate>
+    <pubDate>Mon, 09 Nov 2015 11:08:19 -0500</pubDate>
+    <lastBuildDate>Mon, 09 Nov 2015 11:08:19 -0500</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -45,6 +45,8 @@
 &lt;/section&gt;
 
 &lt;script&gt;
+  var thumbnail,
+      thumbnailWidth;
   $.ajax({
     url: &quot;http://api.tumblr.com/v2/blog/montanamoment.tumblr.com/posts?api_key=v6y8zw1aQk66fJevXGoFyv3BHfURcphvUD6hl88BB3yVyLKVm6&quot;,
     dataType: &#39;jsonp&#39;,
@@ -58,13 +60,18 @@
         text += &#39;&lt;li&gt;&lt;a href=&quot;&#39; + p.post_url + &#39;&quot; target=&quot;_blank&quot; style=&quot;background-image: url(&#39; + image.url + &#39;)&quot;&gt;&lt;/a&gt;&lt;/li&gt;&#39;;
       }
       $(&#39;#tumblr ul&#39;).append(text);
-      var thumbnail = $(&#39;#tumblr&#39;).find(&#39;a&#39;),
+      thumbnail = $(&#39;#tumblr&#39;).find(&#39;a&#39;),
       thumbnailWidth = thumbnail.width();
       thumbnail.height(thumbnailWidth);
       thumbnail.each(function(i) {
         $(this).delay((i++) * 100).fadeTo(200, 1);
       });
     }
+  });
+  $( window ).resize(function() {
+      thumbnail = $(&#39;#tumblr&#39;).find(&#39;a&#39;),
+      thumbnailWidth = thumbnail.width();
+      thumbnail.height(thumbnailWidth);
   });
 &lt;/script&gt;</description>
         <pubDate>Fri, 05 Jun 2015 13:43:45 -0400</pubDate>
