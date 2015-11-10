@@ -144,14 +144,14 @@ pre {
   font-size: 15px;
   border: 1px solid $heading-color;
   border-radius: 6px;
-  background-color: lighten($heading-color, 75%);
+  background-color: lighten($heading-color, 65%);
   @include transition(all .35s);
   @include white-space(pre-wrap);
   &:hover,
   &:focus {
     border-radius: 0;
     border-color: $brand-color;
-    background-color: lighten($heading-color, 80%);
+    background-color: lighten($heading-color, 70%);
   }
 }
 
