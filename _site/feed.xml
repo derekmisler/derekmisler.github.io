@@ -6,8 +6,8 @@
 </description>
     <link>http://derekmisler.github.io/</link>
     <atom:link href="http://derekmisler.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 10 Nov 2015 16:58:52 -0500</pubDate>
-    <lastBuildDate>Tue, 10 Nov 2015 16:58:52 -0500</lastBuildDate>
+    <pubDate>Tue, 10 Nov 2015 17:06:20 -0500</pubDate>
+    <lastBuildDate>Tue, 10 Nov 2015 17:06:20 -0500</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -92,7 +92,7 @@
       </item>
     
       <item>
-        <title>Music Scene App</title>
+        <title>Music Scene Angular App</title>
         <description>&lt;p&gt;I was given three directives: a slideshow of featured content, widgets of varying types, and everything had to be &lt;a href=&quot;#random&quot;&gt;randomly sorted&lt;/a&gt; (more on that in a minute). Images were always included, but the slideshow may have featured YouTube videos. The widgets had varying types of content, as well:&lt;/p&gt;
 &lt;ul class=&quot;block-grid-2&quot;&gt;
   &lt;li&gt;
