@@ -6,8 +6,8 @@
 </description>
     <link>http://derekmisler.github.io/</link>
     <atom:link href="http://derekmisler.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 10 Nov 2015 09:53:04 -0500</pubDate>
-    <lastBuildDate>Tue, 10 Nov 2015 09:53:04 -0500</lastBuildDate>
+    <pubDate>Tue, 10 Nov 2015 09:59:42 -0500</pubDate>
+    <lastBuildDate>Tue, 10 Nov 2015 09:59:42 -0500</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -216,7 +216,7 @@
       </item>
     
       <item>
-        <title>Breakout</title>
+        <title>Breakout!</title>
         <description>&lt;ul class=&quot;block-grid-2&quot;&gt;
   &lt;li&gt;
     &lt;p&gt;This was the first GUI problem set in &lt;a href=&quot;https://cs50.harvard.edu/&quot; target=&quot;_blank&quot;&gt;Harvard&#39;s CS50x course&lt;/a&gt;. It&#39;s written in C and uses Stanford&#39;s Portable Library API.&lt;/p&gt;
