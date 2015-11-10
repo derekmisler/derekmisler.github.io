@@ -68,6 +68,20 @@
  */
 .page-content {
   padding: $spacing-unit 0;
+  img {
+    border: 1px solid $heading-color;
+    border-radius: 6px;
+    @include transition(all .35s);
+    word-wrap: break-word;
+    @include opacity(.9);
+    margin-bottom: 1rem;
+    &:hover,
+    &:focus {
+      @include opacity(1);
+      border-radius: 0;
+      border-color: $brand-color;
+    }
+  }
 }
 
 .page-heading {

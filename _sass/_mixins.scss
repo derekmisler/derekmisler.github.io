@@ -44,4 +44,10 @@
      -moz-backface-visibility: $visibility;
           backface-visibility: $visibility;
 }
-
+@mixin white-space($wrap){
+  white-space: $wrap;
+  white-space: -moz-$wrap;
+  white-space: -$wrap;
+  white-space: -o-$wrap;
+  word-wrap: break-word;
+}

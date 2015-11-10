@@ -140,16 +140,18 @@ blockquote {
 /**
  * Code formatting
  */
-pre,
-code {
+pre {
   font-size: 15px;
   border: 1px solid $heading-color;
-  border-radius: 3px;
+  border-radius: 6px;
   background-color: lighten($heading-color, 75%);
   @include transition(all .35s);
-  &:hover {
+  @include white-space(pre-wrap);
+  &:hover,
+  &:focus {
     border-radius: 0;
     border-color: $brand-color;
+    background-color: lighten($heading-color, 80%);
   }
 }
 

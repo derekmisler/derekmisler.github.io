@@ -1,11 +1,132 @@
 ---
 layout: default
 title:  "Music Scene App"
-description: "This was an Angular app built to overcome limitations in the CMS. It pulls in editorial content into the randomly-sorted widgets. The design of the widgets eventually became the inspiration for the widgets in the new ExploreAsheville.com."
+description: "This was an Angular app built to overcome limitations in an old CMS. It simply pulls editorial content into the randomly-sorted widgets that link to other sections of the site. The design of the widgets eventually became the inspiration for the new ExploreAsheville.com. The sorting was done using the Fisher–Yates shuffle (found here: http://bost.ocks.org/mike/shuffle/)."
 date:   2015-06-05 13:43:45 -0400
 permalink: music-scene
 tags: Angular, jQuery, HTML5/CSS3, SVG
 ---
+<p>I was given three directives: a slideshow of featured content, widgets of varying types, and everything had to be <a href="#random">randomly sorted</a> (more on that in a minute). Images were always included, but the slideshow may have featured YouTube videos. The widgets had varying types of content, as well:</p>
+<ul class="block-grid-2">
+  <li>
+    <img src="{{ site.baseurl }}/images/music-scene-slideshow.jpg" />
+  </li>
+  <li>
+    <img src="{{ site.baseurl }}/images/music-scene-widgets.jpg" />
+  </li>
+</ul>
 
 
-<link href="https://raw.githubusercontent.com/derekmisler/Music-Scene/master/css/music.css" rel="stylesheet" type="text/css">
+<p>Originally this app pulled from an RSS feed, but for the sake of this presentation, the content is coming directly from the mainController.js:</p>
+
+{% highlight javascript %}
+$scope.stories =
+[
+  {
+    title: "Asheville's Music Heritage",
+    youtube: "7cpk7PTN7xA",
+    caption: "The sounds of bluegrass and old-time music have their roots in the Appalachian mountain region around Asheville, N.C., where visitors can hear live music any night of the week. Asheville’s many festivals and diverse venues keep the area’s musical heritage alive and make it a unique destination for lovers of both traditional and contemporary music.",
+    URL: "http://www.exploreasheville.com/iconic-asheville/music-heritage/",
+    subhead: "Making Music in the Blue Ridge Mountains",
+    featured: true,
+    type: "story"
+  },
+  {
+    title: "Music Itineraries",
+    image: "jam-session-at-the-millroom.jpg",
+    caption: "Enjoy the unique traditions of the Festival of Native Peoples in Cherokee or listen to the indie bands at the Lexington Avenue Arts &amp; Fun Festival. Whatever your musical tastes, Asheville's music festivals provide another compelling mix of musical sounds.",
+    URL: "http://www.exploreasheville.com/music-scene/itineraries/",
+    subhead: "Check out recommended music itineraries.",
+    featured: false,
+    type: "itinerary"
+  },
+...
+]
+{% endhighlight %}
+
+<p>The slideshow uses an <code>if</code> statement to check for YouTube videos:</p>
+
+{% highlight html %}
+{% raw %}
+<ul ng-style="listposition">
+  <li ng-repeat="story in stories | filter:{featured:'true'}" ng-style="imagewrapper">
+    <div ng-if="story.youtube" class="fluidmedia">
+      <iframe width="960" height="405" ng-src="{{ youtubeURL + story.youtube + youtubeOptions }}" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <img ng-if="!story.youtube" ng-src="{{ imageURL + story.image }}" />
+    <div class="caption">
+      <h3>{{ story.title }}</h3>
+      <p>{{ story.caption | limitTo:240 }}<a ng-href="{{ story.URL }}">... read more</a></p>
+    </div>
+  </li>
+</ul>
+{% endraw %}
+{% endhighlight %}
+
+<p>And the slideshow navigation takes advantage of <code>ng-click</code> to move the slideshow.</p>
+<ul class="block-grid-2">
+<li>
+<small>HTML:</small>
+{% highlight html %}
+{% raw %}
+<ul class="nav">
+  <li ng-repeat="story in stories | filter:{featured:'true'}">
+    <a ng-href="" ng-click="scrollTo($index)" ng-class="{sel: $index == selected}"></a>
+  </li>
+</ul>
+{% endraw %}
+{% endhighlight %}
+</li>
+<li>
+<small>JS:</small>
+{% highlight javascript %}
+// Scroll to appropriate position based on image index and width
+$scope.scrollTo = function(index) {
+  var newMargin = imageWidth * index;
+  $scope.selected = index;
+  $scope.listposition = {
+    margin:("0 0 0 " + -newMargin + "px"),
+    width: galleryWidth + "px"
+  };
+};
+{% endhighlight %}
+</li>
+</ul>
+
+
+<p>The widgets use the same <code>ng-repeat="story in stories"</code>, but their design is different and utilizes SVGs:</p>
+
+{% highlight html %}
+{% raw %}
+<li ng-repeat="story in stories | filter:{featured:false} | limitTo:6:1" >
+  <a title="Continue Reading..." href="" ng-href="{{ story.URL }}" class="widget {{ story.type }}">
+    <h4 class="title"><span class="icon-arrow-left" ng-include="'/images/icon-arrow-left.svg'"></span>{{ story.type }}<span class="icon-arrow-right" ng-include="'/images/icon-arrow-right.svg'"></span></h4>
+    <img ng-src="{{ imageURL + story.image }}">
+    <h3 class="subhead">{{ story.title }}</h3>
+    <p class="caption">{{ story.caption | limitTo:140 }}...</p> 
+    <button class="button theme-small" ng-href="{{ story.URL }}" >read more</button>
+  </a>
+</li>
+{% endraw %}
+{% endhighlight %}
+
+<h3 id="random">Random sorting with the <a href="http://www.wikiwand.com/en/Fisher%E2%80%93Yates_shuffle" target="_blank">Fisher–Yates shuffle</a></h3>
+<p>Because of the implications within the community of a tax-funded agency featuring a specific business, all content that could potentially mention a business' name had to be sorted randomly. I took inspiration from <a href="http://bost.ocks.org/mike/shuffle/" target="_blank">this blog post</a> which uses the Fisher–Yates shuffle, reducing the complexity down to <em>O(n)</em>.</p>
+
+{% highlight javascript %}
+var shuffleStories = function(stories) {
+  var storiesTotal = stories.length,
+      holdVar,
+      i;
+  while (storiesTotal) {
+    // Pick a remaining element...
+    i = Math.floor(Math.random() * storiesTotal--);
+    // ...and swap it with the current element.
+    holdVar = stories[storiesTotal];
+    stories[storiesTotal] = stories[i];
+    stories[i] = holdVar;
+  }
+  return stories;
+}
+shuffleStories($scope.stories);
+{% endhighlight %}

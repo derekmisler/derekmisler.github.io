@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>Music Scene App | This project is maintained by Derek Misler.</title>
-	<meta name="description" content="">
+	<meta name="description" content="I was given three directives: a slideshow of featured content, widgets of varying types, and everything had to be randomly sorted (more on that in a minute)....">
 	
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,300italic,700,700italic|Playfair+Display:700" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="/css/main.css">
@@ -55,7 +55,7 @@
       <div class="wrapper">
       
         <div class="description">
-          <p>This was an Angular app built to overcome limitations in the CMS. It pulls in editorial content into the randomly-sorted widgets. The design of the widgets eventually became the inspiration for the widgets in the new ExploreAsheville.com.<br>
+          <p>This was an Angular app built to overcome limitations in an old CMS. It simply pulls editorial content into the randomly-sorted widgets that link to other sections of the site. The design of the widgets eventually became the inspiration for the new ExploreAsheville.com. The sorting was done using the Fisher–Yates shuffle (found here: http://bost.ocks.org/mike/shuffle/).<br>
           <strong>Tools Utilized:</strong> Angular,jQuery,HTML5/CSS3,SVG</p>
           
           <h4 class="site-project-link"><a href="https://github.com/derekmisler/music-scene" target="_blank">View this project on GitHub</a></h4>
@@ -63,7 +63,113 @@
         </div>
         
 
-        <link href="https://raw.githubusercontent.com/derekmisler/Music-Scene/master/css/music.css" rel="stylesheet" type="text/css">
+        <p>I was given three directives: a slideshow of featured content, widgets of varying types, and everything had to be <a href="#random">randomly sorted</a> (more on that in a minute). Images were always included, but the slideshow may have featured YouTube videos. The widgets had varying types of content, as well:</p>
+<ul class="block-grid-2">
+  <li>
+    <img src="/images/music-scene-slideshow.jpg" />
+  </li>
+  <li>
+    <img src="/images/music-scene-widgets.jpg" />
+  </li>
+</ul>
+
+
+<p>Originally this app pulled from an RSS feed, but for the sake of this presentation, the content is coming directly from the mainController.js:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$scope</span><span class="p">.</span><span class="nx">stories</span> <span class="o">=</span>
+<span class="p">[</span>
+  <span class="p">{</span>
+    <span class="na">title</span><span class="p">:</span> <span class="s2">"Asheville's Music Heritage"</span><span class="p">,</span>
+    <span class="na">youtube</span><span class="p">:</span> <span class="s2">"7cpk7PTN7xA"</span><span class="p">,</span>
+    <span class="na">caption</span><span class="p">:</span> <span class="s2">"The sounds of bluegrass and old-time music have their roots in the Appalachian mountain region around Asheville, N.C., where visitors can hear live music any night of the week. Asheville’s many festivals and diverse venues keep the area’s musical heritage alive and make it a unique destination for lovers of both traditional and contemporary music."</span><span class="p">,</span>
+    <span class="na">URL</span><span class="p">:</span> <span class="s2">"http://www.exploreasheville.com/iconic-asheville/music-heritage/"</span><span class="p">,</span>
+    <span class="na">subhead</span><span class="p">:</span> <span class="s2">"Making Music in the Blue Ridge Mountains"</span><span class="p">,</span>
+    <span class="na">featured</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s2">"story"</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">title</span><span class="p">:</span> <span class="s2">"Music Itineraries"</span><span class="p">,</span>
+    <span class="na">image</span><span class="p">:</span> <span class="s2">"jam-session-at-the-millroom.jpg"</span><span class="p">,</span>
+    <span class="na">caption</span><span class="p">:</span> <span class="s2">"Enjoy the unique traditions of the Festival of Native Peoples in Cherokee or listen to the indie bands at the Lexington Avenue Arts &amp;amp; Fun Festival. Whatever your musical tastes, Asheville's music festivals provide another compelling mix of musical sounds."</span><span class="p">,</span>
+    <span class="na">URL</span><span class="p">:</span> <span class="s2">"http://www.exploreasheville.com/music-scene/itineraries/"</span><span class="p">,</span>
+    <span class="na">subhead</span><span class="p">:</span> <span class="s2">"Check out recommended music itineraries."</span><span class="p">,</span>
+    <span class="na">featured</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s2">"itinerary"</span>
+  <span class="p">},</span>
+<span class="p">...</span>
+<span class="p">]</span></code></pre></figure>
+
+<p>The slideshow uses an <code>if</code> statement to check for YouTube videos:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">ng-style=</span><span class="s">"listposition"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">ng-repeat=</span><span class="s">"story in stories | filter:{featured:'true'}"</span> <span class="na">ng-style=</span><span class="s">"imagewrapper"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">ng-if=</span><span class="s">"story.youtube"</span> <span class="na">class=</span><span class="s">"fluidmedia"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;iframe</span> <span class="na">width=</span><span class="s">"960"</span> <span class="na">height=</span><span class="s">"405"</span> <span class="na">ng-src=</span><span class="s">"{{ youtubeURL + story.youtube + youtubeOptions }}"</span> <span class="na">frameborder=</span><span class="s">"0"</span> <span class="na">allowfullscreen</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">ng-if=</span><span class="s">"!story.youtube"</span> <span class="na">ng-src=</span><span class="s">"{{ imageURL + story.image }}"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"caption"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h3&gt;</span>{{ story.title }}<span class="nt">&lt;/h3&gt;</span>
+      <span class="nt">&lt;p&gt;</span>{{ story.caption | limitTo:240 }}<span class="nt">&lt;a</span> <span class="na">ng-href=</span><span class="s">"{{ story.URL }}"</span><span class="nt">&gt;</span>... read more<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+
+<p>And the slideshow navigation takes advantage of <code>ng-click</code> to move the slideshow.</p>
+<ul class="block-grid-2">
+<li>
+<small>HTML:</small>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">ng-repeat=</span><span class="s">"story in stories | filter:{featured:'true'}"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">ng-href=</span><span class="s">""</span> <span class="na">ng-click=</span><span class="s">"scrollTo($index)"</span> <span class="na">ng-class=</span><span class="s">"{sel: $index == selected}"</span><span class="nt">&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+</li>
+<li>
+<small>JS:</small>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Scroll to appropriate position based on image index and width</span>
+<span class="nx">$scope</span><span class="p">.</span><span class="nx">scrollTo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">newMargin</span> <span class="o">=</span> <span class="nx">imageWidth</span> <span class="o">*</span> <span class="nx">index</span><span class="p">;</span>
+  <span class="nx">$scope</span><span class="p">.</span><span class="nx">selected</span> <span class="o">=</span> <span class="nx">index</span><span class="p">;</span>
+  <span class="nx">$scope</span><span class="p">.</span><span class="nx">listposition</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">margin</span><span class="p">:(</span><span class="s2">"0 0 0 "</span> <span class="o">+</span> <span class="o">-</span><span class="nx">newMargin</span> <span class="o">+</span> <span class="s2">"px"</span><span class="p">),</span>
+    <span class="na">width</span><span class="p">:</span> <span class="nx">galleryWidth</span> <span class="o">+</span> <span class="s2">"px"</span>
+  <span class="p">};</span>
+<span class="p">};</span></code></pre></figure>
+</li>
+</ul>
+
+
+<p>The widgets use the same <code>ng-repeat="story in stories"</code>, but their design is different and utilizes SVGs:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;li</span> <span class="na">ng-repeat=</span><span class="s">"story in stories | filter:{featured:false} | limitTo:6:1"</span> <span class="nt">&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">title=</span><span class="s">"Continue Reading..."</span> <span class="na">href=</span><span class="s">""</span> <span class="na">ng-href=</span><span class="s">"{{ story.URL }}"</span> <span class="na">class=</span><span class="s">"widget {{ story.type }}"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"icon-arrow-left"</span> <span class="na">ng-include=</span><span class="s">"'/images/icon-arrow-left.svg'"</span><span class="nt">&gt;&lt;/span&gt;</span>{{ story.type }}<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon-arrow-right"</span> <span class="na">ng-include=</span><span class="s">"'/images/icon-arrow-right.svg'"</span><span class="nt">&gt;&lt;/span&gt;&lt;/h4&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">ng-src=</span><span class="s">"{{ imageURL + story.image }}"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"subhead"</span><span class="nt">&gt;</span>{{ story.title }}<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"caption"</span><span class="nt">&gt;</span>{{ story.caption | limitTo:140 }}...<span class="nt">&lt;/p&gt;</span> 
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"button theme-small"</span> <span class="na">ng-href=</span><span class="s">"{{ story.URL }}"</span> <span class="nt">&gt;</span>read more<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/li&gt;</span></code></pre></figure>
+
+<h3 id="random">Random sorting with the <a href="http://www.wikiwand.com/en/Fisher%E2%80%93Yates_shuffle" target="_blank">Fisher–Yates shuffle</a></h3>
+<p>Because of the implications within the community of a tax-funded agency featuring a specific business, all content that could potentially mention a business' name had to be sorted randomly. I took inspiration from <a href="http://bost.ocks.org/mike/shuffle/" target="_blank">this blog post</a> which uses the Fisher–Yates shuffle, reducing the complexity down to <em>O(n)</em>.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">shuffleStories</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">stories</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">storiesTotal</span> <span class="o">=</span> <span class="nx">stories</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+      <span class="nx">holdVar</span><span class="p">,</span>
+      <span class="nx">i</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">storiesTotal</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Pick a remaining element...</span>
+    <span class="nx">i</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">storiesTotal</span><span class="o">--</span><span class="p">);</span>
+    <span class="c1">// ...and swap it with the current element.</span>
+    <span class="nx">holdVar</span> <span class="o">=</span> <span class="nx">stories</span><span class="p">[</span><span class="nx">storiesTotal</span><span class="p">];</span>
+    <span class="nx">stories</span><span class="p">[</span><span class="nx">storiesTotal</span><span class="p">]</span> <span class="o">=</span> <span class="nx">stories</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+    <span class="nx">stories</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">holdVar</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">stories</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">shuffleStories</span><span class="p">(</span><span class="nx">$scope</span><span class="p">.</span><span class="nx">stories</span><span class="p">);</span></code></pre></figure>
+
       </div>
     </div>
 
