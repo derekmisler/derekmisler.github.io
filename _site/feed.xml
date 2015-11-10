@@ -6,8 +6,8 @@
 </description>
     <link>http://derekmisler.github.io/</link>
     <atom:link href="http://derekmisler.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 10 Nov 2015 15:19:12 -0500</pubDate>
-    <lastBuildDate>Tue, 10 Nov 2015 15:19:12 -0500</lastBuildDate>
+    <pubDate>Tue, 10 Nov 2015 15:24:32 -0500</pubDate>
+    <lastBuildDate>Tue, 10 Nov 2015 15:24:32 -0500</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -104,7 +104,7 @@
 &lt;/ul&gt;
 
 
-&lt;p&gt;Originally this app pulled from an RSS feed, but for the sake of this presentation, the content is coming directly from the mainController.js:&lt;/p&gt;
+&lt;p&gt;Originally this app pulled from a blog&#39;s RSS feed that doesn&#39;t exist anymore, so for the sake of this post, the content is coming directly from the mainController.js:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stories&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
@@ -144,7 +144,7 @@
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;And the slideshow navigation takes advantage of &lt;code&gt;ng-click&lt;/code&gt; to move the slideshow.&lt;/p&gt;
+&lt;p&gt;And the slideshow navigation takes advantage of &lt;code&gt;ng-click&lt;/code&gt; to move the images.&lt;/p&gt;
 &lt;ul class=&quot;block-grid-2&quot;&gt;
 &lt;li&gt;
 &lt;small&gt;HTML:&lt;/small&gt;
