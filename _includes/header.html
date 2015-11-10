@@ -3,16 +3,15 @@
   <div class="wrapper">
 
     <h1 class="site-title">
-    <a href="{{ site.url }}">
     {% if page.title %}
-      {{ page.title }}
+    <a title="Home" href="/">{{ page.title }}</a>
     {% else %}
-      {{ site.title }}
+      <a href="http://www.derekmisler.com" target="_blank">{{ site.title }}</a>
+      <h4 class="site-project-link">This site was built with Jekyll and Sass. <a href="https://github.com/derekmisler/derekmisler.github.io" target="_blank">Learn more on GitHub.</a></h4>
     {% endif %}
     </a>
     </h1>
-    <h4 class="site-subtitle">Projects by <a href="http://www.derekmisler.com" target="_blank">Derek</a>.</h4>
-     <h4 class="site-project-link">This site was built with <a href="https://github.com/derekmisler/derekmisler.github.io" target="_blank">Jekyll and Sass</a>.</h4>
+
   </div>
 
 </header>
