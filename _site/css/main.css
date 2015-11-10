@@ -62,7 +62,7 @@ li > ol {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
-  color: #122c42; }
+  color: #253a57; }
 
 h1, h2, h3 {
   font-family: "Playfair Display", Georgia, Serif; }
@@ -117,9 +117,9 @@ blockquote {
  */
 pre {
   font-size: 15px;
-  border: 1px solid #122c42;
+  border: 1px solid #253a57;
   border-radius: 6px;
-  background-color: #ddeaf6;
+  background-color: #fdfdfe;
   -webkit-transition: all 0.35s;
   -o-transition: all 0.35s;
   transition: all 0.35s;
@@ -131,7 +131,7 @@ pre {
   pre:hover, pre:focus {
     border-radius: 0;
     border-color: #d94700;
-    background-color: #f1f6fb; }
+    background-color: white; }
 
 code {
   padding: 1px 5px; }
@@ -270,7 +270,7 @@ pre {
   padding: 30px 0; }
   .page-content .wrapper > :not(.home) img,
   .page-content .wrapper > :not(.home) video {
-    border: 1px solid #122c42;
+    border: 1px solid #253a57;
     border-radius: 6px;
     -webkit-transition: all 0.35s;
     -o-transition: all 0.35s;
@@ -452,7 +452,7 @@ figure {
   figure p {
     color: white; }
   figure strong {
-    color: #122c42; }
+    color: #253a57; }
   figure img {
     width: 100%; }
   figure figcaption {
@@ -538,7 +538,7 @@ figure {
   background-position: center center;
   background-size: cover;
   border-radius: 50%;
-  border: 1px solid #122c42;
+  border: 1px solid #253a57;
   opacity: 0;
   -webkit-transition: all 0.35s;
   -o-transition: all 0.35s;
