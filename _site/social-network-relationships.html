@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Social Network Relationships | Selected works created by Derek Misler.</title>
+	<meta name="description" content="The purpose of this project was to map the relationships of two people based on locations they've visited in the past. It's used to find similarities between people, like a social network would in order to recommend other people someone might know.Solution:GRAPH = {}def make_link(Graph, node1, node2):    if node1 not in Graph:        Graph[node1] = {}    (Graph[node1])[node2] = 1    if node2 not in Graph:        Graph[node2] = {}    (Graph[node2])[node1] = 1    return Graphsocial = [('Jill','New York'),('Jill','Toronto'), \          ('Jill','London'),('Jack','France'), \          ('Jack','New York'), ('John','Berlin'), \          ('John','London'),('Jacob','New York'), \          ('Joan','Toronto'),]for (x,y) in social: make_link(GRAPH, x, y)def short_path(G, node1, node2):    """ Return the shortest path from node1 to node2"""    dist_from_start = {}    stackoverflow = [node1]    dist_from_start[node1] = [node1]    while len(stackoverflow) &gt; 0:        current = stackoverflow[0]        del stackoverflow[0]        for neighbor in G[current].keys():            if neighbor not in dist_from_start:                dist_from_start[neighbor] = dist_from_start[current] + [neighbor]                if neighbor == node2: return dist_from_start[node2]                stackoverflow.append(neighbor)    return Falseprint short_path(GRAPH, 'Joan', 'John')">
+	
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,300italic,700,700italic|Playfair+Display:700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="canonical" href="http://derekmisler.github.io/social-network-relationships">
+	<link rel="alternate" type="application/rss+xml" title="Projects by Derek" href="http://derekmisler.github.io/feed.xml">
+</head>
+
+
+  <body>
+
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N2C864"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-N2C864');</script>
+	<!-- End Google Tag Manager -->
+
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <h1 class="site-title">
+    
+    <a title="Home" href="/">Social Network Relationships</a>
+    
+    </a>
+    </h1>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+      
+        <div class="description">
+          <p>A command-line interface project for an Advanced Topics in Python course from Udemy.<br>
+          <strong>Tools Utilized:</strong> Python&nbsp;</p>
+          
+          <h4 class="site-project-link"><a href="https://github.com/derekmisler/CS-Courses/blob/master/Python/social-network.py" target="_blank">View this project on GitHub</a></h4>
+          
+        </div>
+        
+
+        <p>The purpose of this project was to map the relationships of two people based on locations they've visited in the past. It's used to find similarities between people, like a social network would in order to recommend other people someone might know.</p>
+<small>Solution:</small>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">GRAPH</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">def</span> <span class="nf">make_link</span><span class="p">(</span><span class="n">Graph</span><span class="p">,</span> <span class="n">node1</span><span class="p">,</span> <span class="n">node2</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">node1</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Graph</span><span class="p">:</span>
+        <span class="n">Graph</span><span class="p">[</span><span class="n">node1</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="p">(</span><span class="n">Graph</span><span class="p">[</span><span class="n">node1</span><span class="p">])[</span><span class="n">node2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">node2</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Graph</span><span class="p">:</span>
+        <span class="n">Graph</span><span class="p">[</span><span class="n">node2</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="p">(</span><span class="n">Graph</span><span class="p">[</span><span class="n">node2</span><span class="p">])[</span><span class="n">node1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">Graph</span>
+<span class="n">social</span> <span class="o">=</span> <span class="p">[(</span><span class="s">'Jill'</span><span class="p">,</span><span class="s">'New York'</span><span class="p">),(</span><span class="s">'Jill'</span><span class="p">,</span><span class="s">'Toronto'</span><span class="p">),</span> \
+          <span class="p">(</span><span class="s">'Jill'</span><span class="p">,</span><span class="s">'London'</span><span class="p">),(</span><span class="s">'Jack'</span><span class="p">,</span><span class="s">'France'</span><span class="p">),</span> \
+          <span class="p">(</span><span class="s">'Jack'</span><span class="p">,</span><span class="s">'New York'</span><span class="p">),</span> <span class="p">(</span><span class="s">'John'</span><span class="p">,</span><span class="s">'Berlin'</span><span class="p">),</span> \
+          <span class="p">(</span><span class="s">'John'</span><span class="p">,</span><span class="s">'London'</span><span class="p">),(</span><span class="s">'Jacob'</span><span class="p">,</span><span class="s">'New York'</span><span class="p">),</span> \
+          <span class="p">(</span><span class="s">'Joan'</span><span class="p">,</span><span class="s">'Toronto'</span><span class="p">),]</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="n">social</span><span class="p">:</span> <span class="n">make_link</span><span class="p">(</span><span class="n">GRAPH</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">short_path</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node1</span><span class="p">,</span> <span class="n">node2</span><span class="p">):</span>
+    <span class="s">""" Return the shortest path from node1 to node2"""</span>
+    <span class="n">dist_from_start</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">stackoverflow</span> <span class="o">=</span> <span class="p">[</span><span class="n">node1</span><span class="p">]</span>
+    <span class="n">dist_from_start</span><span class="p">[</span><span class="n">node1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">node1</span><span class="p">]</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">stackoverflow</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">stackoverflow</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">del</span> <span class="n">stackoverflow</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">current</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">neighbor</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dist_from_start</span><span class="p">:</span>
+                <span class="n">dist_from_start</span><span class="p">[</span><span class="n">neighbor</span><span class="p">]</span> <span class="o">=</span> <span class="n">dist_from_start</span><span class="p">[</span><span class="n">current</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">neighbor</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">neighbor</span> <span class="o">==</span> <span class="n">node2</span><span class="p">:</span> <span class="k">return</span> <span class="n">dist_from_start</span><span class="p">[</span><span class="n">node2</span><span class="p">]</span>
+                <span class="n">stackoverflow</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">False</span>
+<span class="k">print</span> <span class="n">short_path</span><span class="p">(</span><span class="n">GRAPH</span><span class="p">,</span> <span class="s">'Joan'</span><span class="p">,</span> <span class="s">'John'</span><span class="p">)</span></code></pre></figure>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+	<div class="wrapper">
+		<div class="columns-4">
+			<ul class="contact-list">
+				
+				<li>
+					<a href="mailto:derekmisler@gmail.com">derekmisler@gmail.com</a>
+				</li>
+				
+
+				
+				<li>
+					<a target="_blank" href="https://www.linkedin.com/in/derekmisler"><span class="icon icon--linkedin"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="144px" height="144px" viewBox="0 0 144 144" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.1 (15681) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M133.343,0 L10.629,0 C4.765,0 0,4.648 0,10.379 L0,133.609 C0,139.345 4.765,144 10.629,144 L133.343,144 C139.217,144 144.002,139.345 144.002,133.609 L144.002,10.379 C144.002,4.648 139.217,0 133.343,0 Z M122.706,122.707 L101.362,122.707 L101.362,89.288 C101.362,81.315 101.216,71.065 90.264,71.065 C79.149,71.065 77.447,79.747 77.447,88.711 L77.447,122.707 L56.104,122.707 L56.104,53.986 L76.593,53.986 L76.593,63.375 L76.877,63.375 C79.727,57.973 86.694,52.276 97.085,52.276 C118.713,52.276 122.706,66.509 122.706,85.012 L122.706,122.707 Z M32.034,44.592 C25.188,44.592 19.647,39.041 19.647,32.205 C19.647,25.374 25.188,19.825 32.034,19.825 C38.862,19.825 44.411,25.374 44.411,32.205 C44.411,39.041 38.862,44.592 32.034,44.592 Z M21.35,53.986 L42.709,53.986 L42.709,122.707 L21.35,122.707 L21.35,53.986 Z" id="Fill-1" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg></span><span class="username">&nbsp;derekmisler</span></a>
+
+				</li>
+				
+			</ul>
+		</div>
+
+		<div class="columns-8">
+			<p><a href="http://www.derekmisler.com" target="_blank">Derek is a front-end developer with a design background and over 10 years of experience.  He is also available for hire. Click here to learn more.
+</a></p>
+		</div>
+	</div>
+
+</footer>
+
+
+  </body>
+</html>
