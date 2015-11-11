@@ -6,12 +6,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Tumblr API | Selected works created by Derek Misler.</title>
+	<title>Explore Asheville | Selected works created by Derek Misler.</title>
 	<meta name="description" content="Knowing the posts would only ever be images, I kept things simple with just an ajax call for the posts.">
 	
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,300italic,700,700italic|Playfair+Display:700" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://derekmisler.github.io/tumblr-api">
+	<link rel="canonical" href="http://derekmisler.github.io/explore-asheville">
 	<link rel="alternate" type="application/rss+xml" title="Projects by Derek" href="http://derekmisler.github.io/feed.xml">
 </head>
 
@@ -36,7 +36,7 @@
 
     <h1 class="site-title">
     
-    <a title="Home" href="/">Tumblr API</a>
+    <a title="Home" href="/">Explore Asheville</a>
     
     </a>
     </h1>
@@ -50,10 +50,10 @@
       <div class="wrapper">
       
         <div class="description">
-          <p>An example for the PR team for pulling in user-generated content from social media. Using the IFTTT service, they're able 'like' photos on other social channels, which will pull them into a catch-all Tumblr account that feeds into the primary website.<br>
-          <strong>Tools Utilized:</strong> Tumblr&nbsp;API,&nbsp;jQuery,&nbsp;Ajax,&nbsp;JSON&nbsp;</p>
+          <p>The second redesign of ExploreAsheville.com, tourism website for the Asheville Convention & Visitors Bureau.<br>
+          <strong>Tools Utilized:</strong> HTML5,&nbsp;CSS3,&nbsp;NodeJS,&nbsp;Goatee,&nbsp;Responsive&nbsp;Design&nbsp;</p>
           
-          <h4 class="site-project-link"><a href="https://github.com/derekmisler/Tumblr-API" target="_blank">View this project on GitHub</a></h4>
+          <h4 class="site-project-link"><a href="https://github.com/derekmisler/New-ExploreAsheville.com" target="_blank">View this project on GitHub</a></h4>
           
         </div>
         
@@ -68,58 +68,6 @@
   <span class="p">}</span>
 <span class="p">});</span></code></pre></figure>
 
-<p>The rest is just appending each post to a pre-styled grid, then, for effect, fading the images one-by-one into view.</p>
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">postings</span> <span class="o">=</span> <span class="nx">posts</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">posts</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
-<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">postings</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="nx">postings</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-  <span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="nx">p</span><span class="p">.</span><span class="nx">photos</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">alt_sizes</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
-  <span class="nx">text</span> <span class="o">+=</span> <span class="s1">'[image wrapped in the URL to the individual post]'</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">'#tumblr ul'</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
-<span class="p">...</span>
-<span class="nx">thumbnail</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">delay</span><span class="p">((</span><span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">).</span><span class="nx">fadeTo</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-<span class="p">});</span></code></pre></figure>
-
-<p>Results:</p>
-
-<section id="tumblr">
-  <h4 class="title"></h4>
-  <ul class="block-grid-4"></ul>
-</section>
-
-<script>
-  var thumbnail,
-      thumbnailWidth;
-  $.ajax({
-    url: "http://api.tumblr.com/v2/blog/montanamoment.tumblr.com/posts?api_key=v6y8zw1aQk66fJevXGoFyv3BHfURcphvUD6hl88BB3yVyLKVm6",
-    dataType: 'jsonp',
-    success: function(posts){
-      console.log('success');
-      var postings = posts.response.posts;
-      var text = '';
-      for (var i in postings) {
-        var p = postings[i];
-        var image = p.photos[0].alt_sizes[2];
-        text += '<li><a href="' + p.post_url + '" target="_blank" style="background-image: url(' + image.url + ')"></a></li>';
-      }
-      $('#tumblr ul').append(text);
-      thumbnail = $('#tumblr').find('a'),
-      thumbnailWidth = thumbnail.width();
-      thumbnail.height(thumbnailWidth);
-      thumbnail.each(function(i) {
-        $(this).delay((i++) * 100).fadeTo(200, 1);
-      });
-    }
-  });
-  $( window ).resize(function() {
-      thumbnail = $('#tumblr').find('a'),
-      thumbnailWidth = thumbnail.width();
-      thumbnail.height(thumbnailWidth);
-  });
-</script>
       </div>
     </div>
 

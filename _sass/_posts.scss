@@ -1,19 +1,6 @@
 figure {
   position: relative;
   overflow: hidden;
-  h3 {
-      color: $background-color;
-      margin-bottom: .5rem;
-  }
-  p {
-    color: $background-color;
-  }
-  strong {
-    color: $heading-color;
-  }
-  img {
-      width: 100%;
-  }
   figcaption {
     padding: floor($spacing-unit /2);
     position: absolute;
@@ -55,28 +42,60 @@ figure {
       &:focus{
         @include opacity(1);
       }
-    }
-    h3 {
-      position: relative;
-      overflow: hidden;
-      padding-bottom: floor($spacing-unit / 2);
-      font-size: 3rem;
-      &:after {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: $background-color;
-        content: '';
-        @include translate3d(-100%, 0, 0);
-        @include transition(all .5s ease-out);
+      h3 {
+        position: relative;
+        overflow: hidden;
+        padding-bottom: floor($spacing-unit / 2);
+        color: $background-color;
+        font-size: 3rem;
+        margin-bottom: .5rem;
+        &:after {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background: $background-color;
+          content: '';
+          @include translate3d(-100%, 0, 0);
+          @include transition(all .5s ease-out);
+        }
+      }
+      &:hover h3,
+      &:focus h3{
+        &:after {
+          @include translate3d(0, 0, 0);
+        }
+      }
+      p {
+        color: $background-color;
+      }
+      strong {
+        color: $heading-color;
+      }
+      img {
+          width: 100%;
       }
     }
-    &:hover h3,
-    &:focus h3{
-      &:after {
-        @include translate3d(0, 0, 0);
+  }
+}
+@include media-query($on-tablet) {
+  figure {
+    &.effect {
+      background: $brand-color;
+      border: 1px solid $brand-color;
+      img {
+        @include scale(1.1);
+        @include opacity(.2);
+      }
+      figcaption {
+        @include opacity(1);
+        h3 {
+          font-size: 2rem;
+          &:after {
+            @include translate3d(0, 0, 0);
+          }
+        }
       }
     }
   }

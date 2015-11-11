@@ -7,10 +7,10 @@ layout: default
     {% for post in site.posts %}
       <li>
         <figure class="effect">
-          <img src="{{ site.baseurl }}/images/{{ post.permalink }}.jpg" alt="{{ post.description }}" />
+          <img src="{{ site.baseurl }}/images/{{ post.permalink | append: '.jpg' }}" alt="{{ post.description }}" />
           <figcaption>
             <h3>{{ post.title }}</h3>
-            <p>{{ post.description }}</p>
+            <p>{{ post.description | truncatewords: 35 }}</p>
             <p><strong>Tools Utilized:</strong> <br>{% for tag in post.tags %}{{ tag }}&nbsp;{% endfor %}</p>
             <a href="{{ post.url | prepend: site.baseurl }}">View more</a>
           </figcaption>
