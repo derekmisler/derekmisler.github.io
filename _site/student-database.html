@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Student Database | Selected works created by Derek Misler.</title>
+	<meta name="description" content="The purpose of this project was to create a database of courses, teachers, students, and their grades. There is more to this than what's below, I just wanted to show two examples of classes: Creating an individual record and adding that record to a larger database.Learn more about the course here.Student class, which inherits from the Person class:class Student : Person{  public static int numOfStudents = 0;  public static Stack&lt;int&gt; Grades = new Stack&lt;int&gt;();  private static Random r = new Random();  public static void StudentGrades(Stack&lt;int&gt; Grades)  {    for (int i = 0; i &lt; 5; i++)    {      Grades.Push(r.Next(50, 100));    }  }  public Student(string _firstName, string _lastName, string _city, string _state)  {    numOfStudents++;    this.firstName = _firstName;    this.lastName = _lastName;    this.city = _city;    this.state = _state;  }}">
+	
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,300italic,700,700italic|Playfair+Display:700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="canonical" href="http://derekmisler.github.io/student-database">
+	<link rel="alternate" type="application/rss+xml" title="Projects by Derek" href="http://derekmisler.github.io/feed.xml">
+</head>
+
+
+  <body>
+
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N2C864"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-N2C864');</script>
+	<!-- End Google Tag Manager -->
+
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <h1 class="site-title">
+    
+    <a title="Home" href="/">Student Database</a>
+    
+    </a>
+    </h1>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+      
+        <div class="description">
+          <p>A command-line interface project for a Programming with C# course taught by Microsoft through their edX.org program.<br>
+          <strong>Tools Utilized:</strong> C#,&nbsp;OOP&nbsp;in&nbsp;C#,&nbsp;.NET&nbsp;Framework&nbsp;</p>
+          
+          <h4 class="site-project-link"><a href="https://github.com/derekmisler/Projects/tree/master/Module%208%20-%20Generics/Module%208%20-%20Generics" target="_blank">View this project on GitHub</a></h4>
+          
+        </div>
+        
+
+        <p>The purpose of this project was to create a database of courses, teachers, students, and their grades. There is more to this than what's below, I just wanted to show two examples of classes: Creating an individual record and adding that record to a larger database.</p>
+<h4>Learn more about the course <a href="https://www.edx.org/course/programming-c-microsoft-dev204x-1" target="_blank">here</a>.</h4>
+<small>Student class, which inherits from the Person class:</small>
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Student</span> <span class="p">:</span> <span class="n">Person</span>
+<span class="p">{</span>
+  <span class="k">public</span> <span class="k">static</span> <span class="kt">int</span> <span class="n">numOfStudents</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">public</span> <span class="k">static</span> <span class="n">Stack</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">Grades</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;();</span>
+  <span class="k">private</span> <span class="k">static</span> <span class="n">Random</span> <span class="n">r</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Random</span><span class="p">();</span>
+  <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">StudentGrades</span><span class="p">(</span><span class="n">Stack</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">Grades</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="m">5</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+    <span class="p">{</span>
+      <span class="n">Grades</span><span class="p">.</span><span class="nf">Push</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="nf">Next</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="m">100</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">public</span> <span class="nf">Student</span><span class="p">(</span><span class="kt">string</span> <span class="n">_firstName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">_lastName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">_city</span><span class="p">,</span> <span class="kt">string</span> <span class="n">_state</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">numOfStudents</span><span class="p">++;</span>
+    <span class="k">this</span><span class="p">.</span><span class="n">firstName</span> <span class="p">=</span> <span class="n">_firstName</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="n">lastName</span> <span class="p">=</span> <span class="n">_lastName</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="n">city</span> <span class="p">=</span> <span class="n">_city</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="n">state</span> <span class="p">=</span> <span class="n">_state</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<small>This is the class that builds the output:</small>
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Course</span> <span class="p">:</span> <span class="n">UProgram</span>
+<span class="p">{</span>
+  <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">CreateStudentList</span><span class="p">(</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Student</span><span class="p">&gt;</span> <span class="n">students</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="c1">// The student objects
+</span>    <span class="n">Student</span> <span class="n">student0</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Student</span><span class="p">(</span><span class="s">"Michael"</span><span class="p">,</span> <span class="s">"Winston"</span><span class="p">,</span> <span class="s">"Manhattan"</span><span class="p">,</span> <span class="s">"NY"</span><span class="p">);</span>
+    <span class="n">Student</span> <span class="n">student1</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Student</span><span class="p">(</span><span class="s">"Jalal"</span><span class="p">,</span> <span class="s">"Abramsson"</span><span class="p">,</span> <span class="s">"Queens"</span><span class="p">,</span> <span class="s">"NY"</span><span class="p">);</span>
+    <span class="n">Student</span> <span class="n">student2</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Student</span><span class="p">(</span><span class="s">"Arnleik"</span><span class="p">,</span> <span class="s">"Gjersvik"</span><span class="p">,</span> <span class="s">"Brooklyn"</span><span class="p">,</span> <span class="s">"NY"</span><span class="p">);</span>
+    <span class="c1">// Add them to the list&lt;&gt;
+</span>    <span class="n">students</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">student0</span><span class="p">);</span>
+    <span class="n">students</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">student1</span><span class="p">);</span>
+    <span class="n">students</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">student2</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">CreateTeacherList</span><span class="p">(</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Teacher</span><span class="p">&gt;</span> <span class="n">teachers</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="c1">// The teacher
+</span>    <span class="n">Teacher</span> <span class="n">teacher1</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Teacher</span><span class="p">(</span><span class="s">"Gerry"</span><span class="p">,</span> <span class="s">"O'Brien"</span><span class="p">,</span> <span class="s">"Redmond"</span><span class="p">,</span> <span class="s">"WA"</span><span class="p">,</span> <span class="s">"Information Technology"</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+    <span class="c1">// Add them to the list&lt;&gt;
+</span>    <span class="n">teachers</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">teacher1</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="c1">// method for printing students and grades
+</span>  <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">ListStudents</span><span class="p">(</span><span class="n">List</span><span class="p">&lt;</span><span class="n">Student</span><span class="p">&gt;</span> <span class="n">students</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="n">Student</span> <span class="n">student</span> <span class="k">in</span> <span class="n">students</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="c1">// Print the students
+</span>      <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"{0} {1}"</span><span class="p">,</span> <span class="n">student</span><span class="p">.</span><span class="n">firstName</span><span class="p">,</span> <span class="n">student</span><span class="p">.</span><span class="n">lastName</span><span class="p">);</span>
+      <span class="c1">// Print their grades
+</span>      <span class="n">Console</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">"Grades: "</span><span class="p">);</span>
+      <span class="c1">// I'm using the StudentGrades method from the Student class
+</span>      <span class="n">var</span> <span class="n">Grades</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;();</span>
+      <span class="n">Student</span><span class="p">.</span><span class="nf">StudentGrades</span><span class="p">(</span><span class="n">Grades</span><span class="p">);</span>
+      <span class="k">foreach</span> <span class="p">(</span><span class="kt">int</span> <span class="n">_grades</span> <span class="k">in</span> <span class="n">Grades</span><span class="p">)</span>
+      <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">"{0} "</span><span class="p">,</span> <span class="n">_grades</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"\n-----------------\n"</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+	<div class="wrapper">
+		<div class="columns-4">
+			<ul class="contact-list">
+				
+				<li>
+					<a href="mailto:derekmisler@gmail.com">derekmisler@gmail.com</a>
+				</li>
+				
+
+				
+				<li>
+					<a target="_blank" href="https://www.linkedin.com/in/derekmisler"><span class="icon icon--linkedin"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="144px" height="144px" viewBox="0 0 144 144" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.1 (15681) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M133.343,0 L10.629,0 C4.765,0 0,4.648 0,10.379 L0,133.609 C0,139.345 4.765,144 10.629,144 L133.343,144 C139.217,144 144.002,139.345 144.002,133.609 L144.002,10.379 C144.002,4.648 139.217,0 133.343,0 Z M122.706,122.707 L101.362,122.707 L101.362,89.288 C101.362,81.315 101.216,71.065 90.264,71.065 C79.149,71.065 77.447,79.747 77.447,88.711 L77.447,122.707 L56.104,122.707 L56.104,53.986 L76.593,53.986 L76.593,63.375 L76.877,63.375 C79.727,57.973 86.694,52.276 97.085,52.276 C118.713,52.276 122.706,66.509 122.706,85.012 L122.706,122.707 Z M32.034,44.592 C25.188,44.592 19.647,39.041 19.647,32.205 C19.647,25.374 25.188,19.825 32.034,19.825 C38.862,19.825 44.411,25.374 44.411,32.205 C44.411,39.041 38.862,44.592 32.034,44.592 Z M21.35,53.986 L42.709,53.986 L42.709,122.707 L21.35,122.707 L21.35,53.986 Z" id="Fill-1" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg></span><span class="username">&nbsp;derekmisler</span></a>
+
+				</li>
+				
+			</ul>
+		</div>
+
+		<div class="columns-8">
+			<p><a href="http://www.derekmisler.com" target="_blank">Derek is a front-end developer with a design background and over 10 years of experience.  He is also available for hire. Click here to learn more.
+</a></p>
+		</div>
+	</div>
+
+</footer>
+
+
+  </body>
+</html>

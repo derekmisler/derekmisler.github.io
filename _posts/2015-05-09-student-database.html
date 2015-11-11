@@ -1,0 +1,84 @@
+---
+layout: default
+title:  "Student Database"
+description: "A command-line interface project for a Programming with C# course taught by Microsoft through their edX.org program."
+date:   2015-08-01 13:43:45 -0400
+permalink: student-database
+githubURL: https://github.com/derekmisler/Projects/tree/master/Module%208%20-%20Generics/Module%208%20-%20Generics
+tags: C#, OOP in C#, .NET Framework
+---
+
+<p>The purpose of this project was to create a database of courses, teachers, students, and their grades. There is more to this than what's below, I just wanted to show two examples of classes: Creating an individual record and adding that record to a larger database.</p>
+<h4>Learn more about the course <a href="https://www.edx.org/course/programming-c-microsoft-dev204x-1" target="_blank">here</a>.</h4>
+<small>Student class, which inherits from the Person class:</small>
+{% highlight csharp %}
+{% raw %}
+class Student : Person
+{
+  public static int numOfStudents = 0;
+  public static Stack<int> Grades = new Stack<int>();
+  private static Random r = new Random();
+  public static void StudentGrades(Stack<int> Grades)
+  {
+    for (int i = 0; i < 5; i++)
+    {
+      Grades.Push(r.Next(50, 100));
+    }
+  }
+  public Student(string _firstName, string _lastName, string _city, string _state)
+  {
+    numOfStudents++;
+    this.firstName = _firstName;
+    this.lastName = _lastName;
+    this.city = _city;
+    this.state = _state;
+  }
+}
+{% endraw %}
+{% endhighlight %}
+
+<small>This is the class that builds the output:</small>
+{% highlight csharp %}
+{% raw %}
+class Course : UProgram
+{
+  public static void CreateStudentList(List<Student> students)
+  {
+    // The student objects
+    Student student0 = new Student("Michael", "Winston", "Manhattan", "NY");
+    Student student1 = new Student("Jalal", "Abramsson", "Queens", "NY");
+    Student student2 = new Student("Arnleik", "Gjersvik", "Brooklyn", "NY");
+    // Add them to the list<>
+    students.Add(student0);
+    students.Add(student1);
+    students.Add(student2);
+  }
+  public static void CreateTeacherList(List<Teacher> teachers)
+  {
+    // The teacher
+    Teacher teacher1 = new Teacher("Gerry", "O'Brien", "Redmond", "WA", "Information Technology", 1);
+    // Add them to the list<>
+    teachers.Add(teacher1);
+  }
+  // method for printing students and grades
+  public static void ListStudents(List<Student> students)
+  {
+    foreach (Student student in students)
+    {
+      // Print the students
+      Console.WriteLine("{0} {1}", student.firstName, student.lastName);
+      // Print their grades
+      Console.Write("Grades: ");
+      // I'm using the StudentGrades method from the Student class
+      var Grades = new Stack<int>();
+      Student.StudentGrades(Grades);
+      foreach (int _grades in Grades)
+      {
+        Console.Write("{0} ", _grades);
+      }
+      Console.WriteLine("\n-----------------\n");
+    }
+  }
+}
+{% endraw %}
+{% endhighlight %}
