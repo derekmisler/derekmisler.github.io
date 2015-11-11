@@ -6,8 +6,8 @@
 </description>
     <link>http://derekmisler.github.io/</link>
     <atom:link href="http://derekmisler.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 11 Nov 2015 10:21:07 -0500</pubDate>
-    <lastBuildDate>Wed, 11 Nov 2015 10:21:07 -0500</lastBuildDate>
+    <pubDate>Wed, 11 Nov 2015 11:16:40 -0500</pubDate>
+    <lastBuildDate>Wed, 11 Nov 2015 11:16:40 -0500</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -17,6 +17,7 @@
     &lt;p&gt;The ExploreAsheville.com website is the primary web presence for the Visitors Bureau and the linchpin for their marketing efforts. Working with the Bureau&#39;s ad agency, we started the design process with the homepage. The design was meant to mimic a magazine layout, including full-width images/video and featured profiles, representative of the editorial placements Asheville receives.&lt;/p&gt;
     &lt;p&gt;The new website also utilizes a responsive design, with breakpoints for tablet and mobile devices:&lt;/p&gt;
     &lt;img src=&quot;/images/explore-asheville-responsive.jpg&quot; /&gt;
+    &lt;p&gt;Node.js is used to handle the back-end, but the front-end of the site &lt;/p&gt;
   &lt;/article&gt;
   &lt;aside class=&quot;columns-4&quot;&gt;
     &lt;small&gt;Final homepage design:&lt;/small&gt;
