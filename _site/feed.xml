@@ -6,22 +6,64 @@
 </description>
     <link>http://derekmisler.github.io/</link>
     <atom:link href="http://derekmisler.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 11 Nov 2015 11:16:40 -0500</pubDate>
-    <lastBuildDate>Wed, 11 Nov 2015 11:16:40 -0500</lastBuildDate>
+    <pubDate>Wed, 11 Nov 2015 11:35:06 -0500</pubDate>
+    <lastBuildDate>Wed, 11 Nov 2015 11:35:06 -0500</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
         <title>Explore Asheville</title>
         <description>&lt;section class=&quot;&quot;&gt;
   &lt;article class=&quot;columns-8&quot;&gt;
-    &lt;p&gt;The ExploreAsheville.com website is the primary web presence for the Visitors Bureau and the linchpin for their marketing efforts. Working with the Bureau&#39;s ad agency, we started the design process with the homepage. The design was meant to mimic a magazine layout, including full-width images/video and featured profiles, representative of the editorial placements Asheville receives.&lt;/p&gt;
+    &lt;p&gt;The &lt;a href=&quot;http://www.exploreasheville.com&quot; target=&quot;_blank&quot;&gt;ExploreAsheville.com&lt;/a&gt; website is the primary web presence for the Visitors Bureau and the linchpin for their marketing efforts. Working with the Bureau&#39;s ad agency, we started the design process with the homepage. The design was meant to mimic a magazine layout, including full-width images/video and featured profiles, representative of the editorial placements Asheville receives.&lt;/p&gt;
     &lt;p&gt;The new website also utilizes a responsive design, with breakpoints for tablet and mobile devices:&lt;/p&gt;
-    &lt;img src=&quot;/images/explore-asheville-responsive.jpg&quot; /&gt;
-    &lt;p&gt;Node.js is used to handle the back-end, but the front-end of the site &lt;/p&gt;
+    &lt;a href=&quot;http://www.exploreasheville.com&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;/images/explore-asheville-responsive.jpg&quot; /&gt;&lt;/a&gt;
+    &lt;p&gt;Node.js is used to handle the back-end, but the front-end of the site takes advantage of a custom framework with really simple syntax called &lt;a href=&quot;https://github.com/derekmisler/New-ExploreAsheville.com/tree/master/node_modules/goatee&quot; target=&quot;_blank&quot;&gt;Goatee&lt;/a&gt;. For example, here is a widget used to display a featured piece of content (note the simplicity of the &lt;code&gt;{{:var}}&lt;/code&gt; used to represent a positive &lt;code&gt;if/else&lt;/code&gt; conditional):&lt;/p&gt;
+    
+
+
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;custom_content_featured {{templateData.theme}}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-featured-guid=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{guid}}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+{{#items}}
+{{:@first}}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;row itemrow&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;medium-12 large-6 columns itemleft&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;img&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      {{:image}}
+        {{:animated}}
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;video&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;100%&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;autoplay&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;loop&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;muted=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;muted&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;source&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{image.resource.getThumbnailUrl({ height : 480, width : 640, crop : &#39;fill&#39;, gravity: &#39;center&#39;, quality: 60, fetch_format: &#39;mp4&#39; })}}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;video/mp4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/source&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{image.resource.getThumbnailUrl({ height : 480, width : 640, crop : &#39;fill&#39;, gravity: &#39;center&#39;, quality: 60, fetch_format: &#39;png&#39; })}}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/video&amp;gt;&lt;/span&gt;
+        {{?}}
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{image.resource.getThumbnailUrl({ height : 480, width : 640, crop : &#39;fill&#39;, gravity: &#39;center&#39;, quality: 60 })}}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+        {{/}}
+      {{/image}}
+      {{!image}}
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/includes/public/assets/images/default-sq.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+      {{/image}}
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;medium-12 large-6 columns itemright&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;content&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;theme-color&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{url}}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{~var.sanitize(data.title, 100, &#39;&lt;span class=&quot;ni&quot;&gt;&amp;amp;hellip;&lt;/span&gt;&#39;)}}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;subtitle&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{:author}}by {{author}}{{/author}}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;content-arrow theme-small-arrow&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;{{~var.sanitize(data.description, 550, &#39;&#39;)}}{{:url}} &lt;span class=&quot;ni&quot;&gt;&amp;amp;hellip;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;theme-color&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{url}}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;more&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;{{/url}}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+{{/@first}}
+{{/items}}
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+  &lt;p&gt;As you can see, Goatee is a fun/easy language to use and I was excited to have the opportunity to learn it during the redesign of this site.&lt;/p&gt;
+  &lt;h4&gt;Don&#39;t forget to check out the live website here: &lt;a href=&quot;http://www.exploreasheville.com&quot; target=&quot;_blank&quot;&gt;ExploreAsheville.com&lt;/a&gt;&lt;/h4&gt;
+
+
   &lt;/article&gt;
   &lt;aside class=&quot;columns-4&quot;&gt;
     &lt;small&gt;Final homepage design:&lt;/small&gt;
-    &lt;img src=&quot;/images/explore-asheville-desktop.jpg&quot; /&gt;
+    &lt;a href=&quot;http://www.exploreasheville.com&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;/images/explore-asheville-desktop.jpg&quot; /&gt;&lt;/a&gt;
   &lt;/aside&gt;
 &lt;/section&gt;</description>
         <pubDate>Sat, 01 Aug 2015 13:43:45 -0400</pubDate>

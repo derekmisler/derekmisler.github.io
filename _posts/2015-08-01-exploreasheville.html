@@ -9,13 +9,59 @@ tags: HTML5, CSS3, Goatee (JavaScript framework), Responsive Design
 ---
 <section class="">
   <article class="columns-8">
-    <p>The ExploreAsheville.com website is the primary web presence for the Visitors Bureau and the linchpin for their marketing efforts. Working with the Bureau's ad agency, we started the design process with the homepage. The design was meant to mimic a magazine layout, including full-width images/video and featured profiles, representative of the editorial placements Asheville receives.</p>
+    <p>The <a href="http://www.exploreasheville.com" target="_blank">ExploreAsheville.com</a> website is the primary web presence for the Visitors Bureau and the linchpin for their marketing efforts. Working with the Bureau's ad agency, we started the design process with the homepage. The design was meant to mimic a magazine layout, including full-width images/video and featured profiles, representative of the editorial placements Asheville receives.</p>
     <p>The new website also utilizes a responsive design, with breakpoints for tablet and mobile devices:</p>
-    <img src="{{ site.baseurl }}/images/explore-asheville-responsive.jpg" />
-    <p>Node.js is used to handle the back-end, but the front-end of the site </p>
+    <a href="http://www.exploreasheville.com" target="_blank"><img src="{{ site.baseurl }}/images/explore-asheville-responsive.jpg" /></a>
+    <p>Node.js is used to handle the back-end, but the front-end of the site takes advantage of a custom framework with really simple syntax called <a href="https://github.com/derekmisler/New-ExploreAsheville.com/tree/master/node_modules/goatee" target="_blank">Goatee</a>. For example, here is a widget used to display a featured piece of content (note the simplicity of the <code>{% raw %}{{:var}}{% endraw %}</code> used to represent a positive <code>if/else</code> conditional):</p>
+    
+
+
+
+{% highlight html %}
+{% raw %}
+<div class="custom_content_featured {{templateData.theme}}" data-featured-guid="{{guid}}">
+{{#items}}
+{{:@first}}
+  <div class="row itemrow">
+    <div class="medium-12 large-6 columns itemleft">
+      <div class="img">
+      {{:image}}
+        {{:animated}}
+        <video width="100%" autoplay loop muted="muted">
+          <source src="{{image.resource.getThumbnailUrl({ height : 480, width : 640, crop : 'fill', gravity: 'center', quality: 60, fetch_format: 'mp4' })}}" type="video/mp4"></source>
+          <img src="{{image.resource.getThumbnailUrl({ height : 480, width : 640, crop : 'fill', gravity: 'center', quality: 60, fetch_format: 'png' })}}"/>
+        </video>
+        {{?}}
+        <img src="{{image.resource.getThumbnailUrl({ height : 480, width : 640, crop : 'fill', gravity: 'center', quality: 60 })}}"/>
+        {{/}}
+      {{/image}}
+      {{!image}}
+        <img src="/includes/public/assets/images/default-sq.jpg"/>
+      {{/image}}
+      </div>
+    </div>
+    <div class="medium-12 large-6 columns itemright">
+      <div class="content">
+        <div class="title"><a class="theme-color" href="{{url}}">{{~var.sanitize(data.title, 100, '&hellip;')}}</a></div>
+        <div class="subtitle">{{:author}}by {{author}}{{/author}}</div>
+        <div class="content-arrow theme-small-arrow"></div>
+        <p>{{~var.sanitize(data.description, 550, '')}}{{:url}} &hellip; <a class="theme-color" href="{{url}}">more</a>{{/url}}</p>
+      </div>
+    </div>
+  </div>
+{{/@first}}
+{{/items}}
+</div>
+{% endraw %}
+{% endhighlight %}
+
+  <p>As you can see, Goatee is a fun/easy language to use and I was excited to have the opportunity to learn it during the redesign of this site.</p>
+  <h4>Don't forget to check out the live website here: <a href="http://www.exploreasheville.com" target="_blank">ExploreAsheville.com</a></h4>
+
+
   </article>
   <aside class="columns-4">
     <small>Final homepage design:</small>
-    <img src="{{ site.baseurl }}/images/explore-asheville-desktop.jpg" />
+    <a href="http://www.exploreasheville.com" target="_blank"><img src="{{ site.baseurl }}/images/explore-asheville-desktop.jpg" /></a>
   </aside>
 </section>
