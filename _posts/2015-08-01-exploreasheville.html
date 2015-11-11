@@ -5,17 +5,16 @@ description: "The second redesign of ExploreAsheville.com, tourism website for t
 date:   2015-08-01 13:43:45 -0400
 permalink: explore-asheville
 githubURL: https://github.com/derekmisler/New-ExploreAsheville.com
-tags: HTML5, CSS3, NodeJS, Goatee, Responsive Design
+tags: HTML5, CSS3, Goatee (JavaScript framework), Responsive Design
 ---
-
-<p>Knowing the posts would only ever be images, I kept things simple with just an ajax call for the posts.</p>
-
-{% highlight javascript %}
-$.ajax({
-  url: "http://api.tumblr.com/v2/blog/[tumblr name]/posts?api_key=[api key]",
-  dataType: 'jsonp',
-  success: function(info){
-    ...
-  }
-});
-{% endhighlight %}
+<section class="">
+  <article class="columns-8">
+    <p>The ExploreAsheville.com website is the primary web presence for the Visitors Bureau and the linchpin for their marketing efforts. Working with the Bureau's ad agency, we started the design process with the homepage. The design was meant to mimic a magazine layout, including full-width images/video and featured profiles, representative of the editorial placements Asheville receives.</p>
+    <p>The new website also utilizes a responsive design, with breakpoints for tablet and mobile devices:</p>
+    <img src="{{ site.baseurl }}/images/explore-asheville-responsive.jpg" />
+  </article>
+  <aside class="columns-4">
+    <small>Final homepage design:</small>
+    <img src="{{ site.baseurl }}/images/explore-asheville-desktop.jpg" />
+  </aside>
+</section>

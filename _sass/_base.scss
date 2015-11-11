@@ -35,6 +35,7 @@ p, blockquote, pre,
 ul, ol, dl,
 %vertical-rhythm {
   margin-bottom: $spacing-unit / 2;
+  text-rendering: optimizeLegibility;
 }
 
 
@@ -123,8 +124,8 @@ a {
  * Blockquotes
  */
 blockquote {
-  color: $grey-color;
-  border-left: 4px solid $grey-color-light;
+  color: $heading-color;
+  border-left: 4px solid $heading-color;
   padding-left: $spacing-unit / 2;
   font-size: 18px;
   letter-spacing: -1px;
@@ -167,6 +168,15 @@ pre {
     padding-right: 0;
     padding-left: 0;
   }
+}
+
+
+small {
+  font-style: italic;
+  font-size: $small-font-size;
+  color: $heading-color;
+  margin: 0;
+  padding: 0;
 }
 
 

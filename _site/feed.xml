@@ -6,22 +6,23 @@
 </description>
     <link>http://derekmisler.github.io/</link>
     <atom:link href="http://derekmisler.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 11 Nov 2015 07:58:18 -0500</pubDate>
-    <lastBuildDate>Wed, 11 Nov 2015 07:58:18 -0500</lastBuildDate>
+    <pubDate>Wed, 11 Nov 2015 10:21:07 -0500</pubDate>
+    <lastBuildDate>Wed, 11 Nov 2015 10:21:07 -0500</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
         <title>Explore Asheville</title>
-        <description>&lt;p&gt;Knowing the posts would only ever be images, I kept things simple with just an ajax call for the posts.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ajax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;http://api.tumblr.com/v2/blog/[tumblr name]/posts?api_key=[api key]&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;dataType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;jsonp&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-</description>
+        <description>&lt;section class=&quot;&quot;&gt;
+  &lt;article class=&quot;columns-8&quot;&gt;
+    &lt;p&gt;The ExploreAsheville.com website is the primary web presence for the Visitors Bureau and the linchpin for their marketing efforts. Working with the Bureau&#39;s ad agency, we started the design process with the homepage. The design was meant to mimic a magazine layout, including full-width images/video and featured profiles, representative of the editorial placements Asheville receives.&lt;/p&gt;
+    &lt;p&gt;The new website also utilizes a responsive design, with breakpoints for tablet and mobile devices:&lt;/p&gt;
+    &lt;img src=&quot;/images/explore-asheville-responsive.jpg&quot; /&gt;
+  &lt;/article&gt;
+  &lt;aside class=&quot;columns-4&quot;&gt;
+    &lt;small&gt;Final homepage design:&lt;/small&gt;
+    &lt;img src=&quot;/images/explore-asheville-desktop.jpg&quot; /&gt;
+  &lt;/aside&gt;
+&lt;/section&gt;</description>
         <pubDate>Sat, 01 Aug 2015 13:43:45 -0400</pubDate>
         <link>http://derekmisler.github.io/explore-asheville</link>
         <guid isPermaLink="true">http://derekmisler.github.io/explore-asheville</guid>
@@ -30,9 +31,11 @@
         
         <category>CSS3,</category>
         
-        <category>NodeJS,</category>
+        <category>Goatee</category>
         
-        <category>Goatee,</category>
+        <category>(JavaScript</category>
+        
+        <category>framework),</category>
         
         <category>Responsive</category>
         
