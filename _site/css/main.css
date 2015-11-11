@@ -116,23 +116,32 @@ blockquote {
 /**
  * Code formatting
  */
-pre {
-  font-size: 13px;
-  border: 1px solid #253a57;
-  border-radius: 6px;
-  background-color: #d9e2ef;
-  -webkit-transition: all 0.35s;
-  -o-transition: all 0.35s;
-  transition: all 0.35s;
-  white-space: pre-wrap;
-  white-space: -moz- pre-wrap;
-  white-space: -pre-wrap;
-  white-space: -o- pre-wrap;
-  word-wrap: break-word; }
-  pre:hover, pre:focus {
-    border-radius: 0;
-    border-color: #d94700;
-    background-color: #ebf0f6; }
+.highlight {
+  padding: 30px 0 0 0; }
+  .highlight pre {
+    font-size: 13px;
+    background-color: #d9e2ef;
+    -webkit-transition: all 0.35s;
+    -o-transition: all 0.35s;
+    transition: all 0.35s;
+    white-space: pre-wrap;
+    white-space: -moz- pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o- pre-wrap;
+    word-wrap: break-word; }
+    .highlight pre:hover, .highlight pre:focus {
+      background-color: #ebf0f6; }
+  .highlight:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 3.33333px 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #a3b9d8;
+    background-color: #c7d4e7;
+    content: "Code"; }
 
 pre {
   padding: 15px; }
@@ -272,14 +281,12 @@ small {
   .page-content .wrapper > :not(.home) img,
   .page-content .wrapper > :not(.home) video {
     border: 1px solid #253a57;
-    border-radius: 6px;
     -webkit-transition: all 0.35s;
     -o-transition: all 0.35s;
     transition: all 0.35s; }
     .page-content .wrapper > :not(.home) img:hover, .page-content .wrapper > :not(.home) img:focus,
     .page-content .wrapper > :not(.home) video:hover,
     .page-content .wrapper > :not(.home) video:focus {
-      border-radius: 0;
       border-color: #d94700; }
 
 .description {

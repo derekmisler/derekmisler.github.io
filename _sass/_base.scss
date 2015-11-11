@@ -141,21 +141,32 @@ blockquote {
 /**
  * Code formatting
  */
-pre {
-  font-size: 13px;
-  border: 1px solid $heading-color;
-  border-radius: 6px;
-  background-color: lighten($heading-color, 65%);
-  @include transition(all .35s);
-  @include white-space(pre-wrap);
-  &:hover,
-  &:focus {
-    border-radius: 0;
-    border-color: $brand-color;
-    background-color: lighten($heading-color, 70%);
+.highlight{
+  padding: $spacing-unit 0 0 0;
+  pre {
+    font-size: 13px;
+    background-color: lighten($heading-color, 65%);
+    @include transition(all .35s);
+    @include white-space(pre-wrap);
+    
+    &:hover,
+    &:focus {
+      background-color: lighten($heading-color, 70%);
+    }
+  }
+  &:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: ($spacing-unit/9) ($spacing-unit/3);
+    font-size: $small-font-size;
+    font-weight: bold;
+    color: lighten($heading-color, 50%);
+    background-color: lighten($heading-color, 60%);
+    content: "Code";
   }
 }
-
 code {
   
 }

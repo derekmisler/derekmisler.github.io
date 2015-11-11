@@ -72,11 +72,9 @@
   .wrapper > :not(.home) img,
   .wrapper > :not(.home) video {
     border: 1px solid $heading-color;
-    border-radius: 6px;
     @include transition(all .35s);
     &:hover,
     &:focus {
-      border-radius: 0;
       border-color: $brand-color;
     }
   }

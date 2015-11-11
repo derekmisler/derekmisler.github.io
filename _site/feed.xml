@@ -6,8 +6,8 @@
 </description>
     <link>http://derekmisler.github.io/</link>
     <atom:link href="http://derekmisler.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 11 Nov 2015 16:03:35 -0500</pubDate>
-    <lastBuildDate>Wed, 11 Nov 2015 16:03:35 -0500</lastBuildDate>
+    <pubDate>Wed, 11 Nov 2015 18:54:27 -0500</pubDate>
+    <lastBuildDate>Wed, 11 Nov 2015 18:54:27 -0500</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -294,7 +294,7 @@
     
       <item>
         <title>Social Network Relationships</title>
-        <description>&lt;p&gt;The purpose of this project was to map the relationships of two people based on locations they&#39;ve visited in the past. It&#39;s used to find similarities between people, like a social network would in order to recommend other people someone might know.&lt;/p&gt;
+        <description>&lt;p&gt;The purpose of this project was to map the relationships of two people based on locations they&#39;ve visited in the past. It&#39;s used to find similarities between people, like a social network would in order to recommend potential new friends.&lt;/p&gt;
 &lt;small&gt;Solution:&lt;/small&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;GRAPH&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;make_link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Graph&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
