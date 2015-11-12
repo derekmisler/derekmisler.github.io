@@ -11,8 +11,8 @@ $background-color: #ffffff;
 $brand-color:      #D94700;
 $heading-color:    #253a57;
 
-$grey-color:       #2A2C2B;
-$grey-color-light: lighten(#000, 46.7%);
+$grey-color:       lighten($heading-color, 65%);
+$grey-color-light: lighten($heading-color, 70%);
 $grey-color-dark:  $heading-color;
 
 $base-font-family: "Lato", "Helvetica Neue", Helvetica, Sans-Serif;
