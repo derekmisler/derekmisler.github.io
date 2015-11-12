@@ -50,6 +50,27 @@ class Person
 }
 {% endraw %}
 {% endhighlight %}
+<small>The Teacher class:</small>
+{% highlight csharp %}
+{% raw %}
+class Teacher : Person
+{
+  // member variables
+  public int empNumber { get; set; }
+  public string department { get; set; }
+  // Teacher profile
+  public Teacher(string _firstName, string _lastName, string _city, string _state, string _department, int _empNumber)
+  {
+    this.firstName = _firstName;
+    this.lastName = _lastName;
+    this.city = _city;
+    this.state = _state;
+    this.department = _department;
+    this.empNumber = _empNumber;
+  }
+}
+{% endraw %}
+{% endhighlight %}
 </li>
 <li>
 <small>This is the class that builds the output:</small>
