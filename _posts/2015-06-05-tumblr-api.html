@@ -8,7 +8,7 @@ githubURL: https://github.com/derekmisler/Tumblr-API
 tags: Tumblr API, jQuery, Ajax, JSON
 ---
 
-<p>Knowing the posts would only ever be images, I kept things simple with just an ajax call for the posts.</p>
+<p>Knowing the posts would only ever be images, I kept things simple with just an ajax call for the posts:</p>
 
 {% highlight javascript %}
 $.ajax({
@@ -20,7 +20,7 @@ $.ajax({
 });
 {% endhighlight %}
 
-<p>The rest is just appending each post to a pre-styled grid, then, for effect, fading the images one-by-one into view.</p>
+<p>The rest is just appending each post to a pre-styled grid, then, for effect, fading the images one-by-one into view:</p>
 
 {% highlight javascript %}
 var postings = posts.response.posts;
@@ -40,7 +40,6 @@ thumbnail.each(function(i) {
 <p>Results:</p>
 
 <section id="tumblr">
-  <h4 class="title"></h4>
   <ul class="block-grid-4"></ul>
 </section>
 

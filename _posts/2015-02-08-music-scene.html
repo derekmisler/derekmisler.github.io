@@ -64,10 +64,9 @@ $scope.stories =
 {% endraw %}
 {% endhighlight %}
 
-<p>And the slideshow navigation takes advantage of <code>ng-click</code> to move the images.</p>
+<p>And the slideshow navigation takes advantage of <code>ng-click</code> to move the images:</p>
 <ul class="block-grid-2">
 <li>
-<p>HTML:</p>
 {% highlight html %}
 {% raw %}
 <ul class="nav">
@@ -79,7 +78,6 @@ $scope.stories =
 {% endhighlight %}
 </li>
 <li>
-<p>JS:</p>
 {% highlight javascript %}
 // Scroll to appropriate position based on image index and width
 $scope.scrollTo = function(index) {
@@ -112,7 +110,7 @@ $scope.scrollTo = function(index) {
 {% endhighlight %}
 
 <h3 id="random">Random sorting with the <a href="http://www.wikiwand.com/en/Fisher%E2%80%93Yates_shuffle" target="_blank">Fisher–Yates shuffle</a></h3>
-<p>Because of the implications within the community of a tax-funded agency featuring a specific business, all content that could potentially mention a business' name had to be sorted randomly. I took inspiration from <a href="http://bost.ocks.org/mike/shuffle/" target="_blank">this blog post</a> which uses the Fisher–Yates shuffle, reducing the complexity down to <em>O(n)</em>.</p>
+<p>Because of the implications within the community of a tax-funded agency featuring a specific business, all content that could potentially mention a business' name had to be sorted randomly. I took inspiration from <a href="http://bost.ocks.org/mike/shuffle/" target="_blank">this blog post</a> which uses the Fisher–Yates shuffle, reducing the complexity down to <em>O(n)</em>:</p>
 
 {% highlight javascript %}
 var shuffleStories = function(stories) {
