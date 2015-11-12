@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>Student Database | Selected works created by Derek Misler.</title>
-	<meta name="description" content="The purpose of this project was to create a database of courses, teachers, students, and their grades. There is more to this than what's below, I just wanted to show two examples of classes: Creating an individual record and adding that record to a larger database.Learn more about the course here.Student class, which inherits from the Person class:class Student : Person{  public static int numOfStudents = 0;  public static Stack&lt;int&gt; Grades = new Stack&lt;int&gt;();  private static Random r = new Random();  public static void StudentGrades(Stack&lt;int&gt; Grades)  {    for (int i = 0; i &lt; 5; i++)    {      Grades.Push(r.Next(50, 100));    }  }  public Student(string _firstName, string _lastName, string _city, string _state)  {    numOfStudents++;    this.firstName = _firstName;    this.lastName = _lastName;    this.city = _city;    this.state = _state;  }}">
+	<meta name="description" content="The purpose of this project was to create a database of courses, teachers, students, and their grades. There is more to this than what's below, I just wanted to show two examples of classes: Creating an individual record and adding that record to a larger database.Learn more about the course here.Student class, which inherits from the Person class:class Student : Person{  public static int numOfStudents = 0;  public static Stack&lt;int&gt; Grades = new Stack&lt;int&gt;();  private static Random r = new Random();  public static void StudentGrades(Stack&lt;int&gt; Grades)  {    for (int i = 0; i &lt; 5; i++)    {      Grades.Push(r.Next(50, 100));    }  }  public Student(string _firstName, string _lastName, string _city, string _state)  {    numOfStudents++;    this.firstName = _firstName;    this.lastName = _lastName;    this.city = _city;    this.state = _state;  }}The Person class, which also shares member variables with the Teacher class:class Person{  public string firstName { get; set; }  public string lastName { get; set; }  public string city { get; set; }  public string state { get; set; }}The Teacher class:class Teacher : Person{  // member variables  public int empNumber { get; set; }  public string department { get; set; }  // Teacher profile  public Teacher(string _firstName, string _lastName, string _city, string _state, string _department, int _empNumber)  {    this.firstName = _firstName;    this.lastName = _lastName;    this.city = _city;    this.state = _state;    this.department = _department;    this.empNumber = _empNumber;  }}This is the class that builds the output:class Course : UProgram{  public static void CreateStudentList(List&lt;Student&gt; students)  {    // The student objects    Student student0 = new Student("Michael", "Winston", "Manhattan", "NY");    Student student1 = new Student("Jalal", "Abramsson", "Queens", "NY");    Student student2 = new Student("Arnleik", "Gjersvik", "Brooklyn", "NY");    // Add them to the list&lt;&gt;    students.Add(student0);    students.Add(student1);    students.Add(student2);  }  public static void CreateTeacherList(List&lt;Teacher&gt; teachers)  {    // The teacher    Teacher teacher1 = new Teacher("Gerry", "O'Brien", "Redmond", "WA", "Information Technology", 1);    // Add them to the list&lt;&gt;    teachers.Add(teacher1);  }  // method for printing students and grades  public static void ListStudents(List&lt;Student&gt; students)  {    foreach (Student student in students)    {      // Print the students      Console.WriteLine("{0} {1}", student.firstName, student.lastName);      // Print their grades      Console.Write("Grades: ");      // I'm using the StudentGrades method from the Student class      var Grades = new Stack&lt;int&gt;();      Student.StudentGrades(Grades);      foreach (int _grades in Grades)      {        Console.Write("{0} ", _grades);      }      Console.WriteLine("\n-----------------\n");    }  }}To see the rest, check out the repository here.">
 	
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,300italic,700,700italic|Playfair+Display:700" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="/css/main.css">
@@ -51,7 +51,7 @@
       
         <div class="description">
           <p>A command-line interface project for a Programming with C# course taught by Microsoft through their edX.org program.<br>
-          <strong>Tools Utilized:</strong> C#,&nbsp;OOP&nbsp;in&nbsp;C#,&nbsp;.NET&nbsp;Framework&nbsp;</p>
+          <strong>Tools Utilized:</strong> C#, OOP in C#, .NET Framework </p>
           
           <h4 class="site-project-link"><a href="https://github.com/derekmisler/Projects/tree/master/Module%208%20-%20Generics/Module%208%20-%20Generics" target="_blank">View this project on GitHub</a></h4>
           
@@ -60,6 +60,8 @@
 
         <p>The purpose of this project was to create a database of courses, teachers, students, and their grades. There is more to this than what's below, I just wanted to show two examples of classes: Creating an individual record and adding that record to a larger database.</p>
 <h4>Learn more about the course <a href="https://www.edx.org/course/programming-c-microsoft-dev204x-1" target="_blank">here</a>.</h4>
+<ul class="block-grid-2">
+<li>
 <small>Student class, which inherits from the Person class:</small>
 <figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Student</span> <span class="p">:</span> <span class="n">Person</span>
 <span class="p">{</span>
@@ -82,7 +84,33 @@
     <span class="k">this</span><span class="p">.</span><span class="n">state</span> <span class="p">=</span> <span class="n">_state</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
-
+<small>The Person class, which also shares member variables with the Teacher class:</small>
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+  <span class="k">public</span> <span class="kt">string</span> <span class="n">firstName</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+  <span class="k">public</span> <span class="kt">string</span> <span class="n">lastName</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+  <span class="k">public</span> <span class="kt">string</span> <span class="n">city</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+  <span class="k">public</span> <span class="kt">string</span> <span class="n">state</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+<small>The Teacher class:</small>
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Teacher</span> <span class="p">:</span> <span class="n">Person</span>
+<span class="p">{</span>
+  <span class="c1">// member variables
+</span>  <span class="k">public</span> <span class="kt">int</span> <span class="n">empNumber</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+  <span class="k">public</span> <span class="kt">string</span> <span class="n">department</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+  <span class="c1">// Teacher profile
+</span>  <span class="k">public</span> <span class="nf">Teacher</span><span class="p">(</span><span class="kt">string</span> <span class="n">_firstName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">_lastName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">_city</span><span class="p">,</span> <span class="kt">string</span> <span class="n">_state</span><span class="p">,</span> <span class="kt">string</span> <span class="n">_department</span><span class="p">,</span> <span class="kt">int</span> <span class="n">_empNumber</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="n">firstName</span> <span class="p">=</span> <span class="n">_firstName</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="n">lastName</span> <span class="p">=</span> <span class="n">_lastName</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="n">city</span> <span class="p">=</span> <span class="n">_city</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="n">state</span> <span class="p">=</span> <span class="n">_state</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="n">department</span> <span class="p">=</span> <span class="n">_department</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="n">empNumber</span> <span class="p">=</span> <span class="n">_empNumber</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+</li>
+<li>
 <small>This is the class that builds the output:</small>
 <figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">class</span> <span class="nc">Course</span> <span class="p">:</span> <span class="n">UProgram</span>
 <span class="p">{</span>
@@ -124,6 +152,9 @@
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
+</li>
+</ul>
+<h4>To see the rest, <a href="https://github.com/derekmisler/Projects/blob/master/Module%208%20-%20Generics/Module%208%20-%20Generics/Program.cs" target="_blank">check out the repository here</a>.</h4>
       </div>
     </div>
 

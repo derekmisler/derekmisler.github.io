@@ -12,7 +12,7 @@ dl, dd, ol, ul, figure {
  */
 body {
   font: 300 20px/1.6 "Lato", "Helvetica Neue", Helvetica, Sans-Serif;
-  color: #2a2c2b;
+  color: #253a57;
   background-color: white;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
@@ -107,9 +107,8 @@ blockquote {
   color: #253a57;
   border-left: 4px solid #253a57;
   padding-left: 15px;
-  font-size: 18px;
-  letter-spacing: -1px;
-  font-style: italic; }
+  font-size: 20px;
+  font-style: normal; }
   blockquote > :last-child {
     margin-bottom: 0; }
 
@@ -117,7 +116,8 @@ blockquote {
  * Code formatting
  */
 .highlight {
-  padding: 30px 0 0 0; }
+  padding: 30px 0 0 0;
+  position: relative; }
   .highlight pre {
     font-size: 13px;
     background-color: #d9e2ef;
@@ -138,9 +138,9 @@ blockquote {
     left: 0;
     padding: 3.33333px 10px;
     font-size: 15px;
-    font-weight: bold;
-    color: #a3b9d8;
-    background-color: #c7d4e7;
+    font-style: italic;
+    color: #ebf0f6;
+    background-color: #253a57;
     content: "Code"; }
 
 pre {
