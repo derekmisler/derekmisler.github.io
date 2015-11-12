@@ -127,9 +127,8 @@ blockquote {
   color: $heading-color;
   border-left: 4px solid $heading-color;
   padding-left: $spacing-unit / 2;
-  font-size: 18px;
-  letter-spacing: -1px;
-  font-style: italic;
+  font-size: $base-font-size;
+  font-style: normal;
 
   > :last-child {
     margin-bottom: 0;
@@ -162,8 +161,8 @@ blockquote {
     padding: ($spacing-unit/9) ($spacing-unit/3);
     font-size: $small-font-size;
     font-weight: bold;
-    color: lighten($heading-color, 50%);
-    background-color: lighten($heading-color, 60%);
+    color: lighten($heading-color, 90%);
+    background-color: $heading-color;
     content: "Code";
   }
 }
