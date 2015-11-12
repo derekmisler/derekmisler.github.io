@@ -13,7 +13,7 @@
       {% if page.description %}
         <div class="description">
           <p>{{ page.description }}<br>
-          <strong>Tools Utilized:</strong> {% for tag in page.tags %}{{ tag }}&nbsp;{% endfor %}</p>
+          <strong>Tools Utilized:</strong> {% for tag in page.tags %}{{ tag }} {% endfor %}</p>
           {% if page.githubURL %}
           <h4 class="site-project-link"><a href="{{ page.githubURL }}" target="_blank">View this project on GitHub</a></h4>
           {% endif %}
