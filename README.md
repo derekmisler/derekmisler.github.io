@@ -6,11 +6,11 @@
 - http://www.derekmisler.com
 
 
-I am a front-end developer with 10+ years experience. I have a well-rounded education, both traditional and self-driven, of many different web and application development languages for both desktop and mobile, including Python, Ruby, C/C++, C#/.NET, PHP. I have an advanced proficiency of front-end techniques involving HTML5, CSS3, and JavaScript, including frameworks such as jQuery, Angular, and React. I also have a design background with a special focus on color theory and typography. I think all developers should have an eye for design, and I believe having this well-rounded education makes me a unique candidate for a position at any company. Some of my favorite aspects of web and UX/UI development are solving complex data-related problems to build beautiful products, analysis and optimization, and finding and fixing bugs through a test-driven development approach. I am an independent person, but I enjoy the learning opportunities afforded by working on a team.
+I am a front-end developer and UI/UX designer living in New York with 10+ years experience. I have a diverse education, both traditional and self-driven, of many different web and application development languages for both desktop and mobile. I am basically fluent when it comes to HTML5, CSS3 (including CSS preprocessors like LESS and Sass) along with JavaScript/jQuery (including frameworks like Angular and React). I have experience with back-end and software languages, too, like C# and .NET, Node, Python, Ruby, and a long history with PHP. I also have a design background a surprisingly large knowledge of typography (seriously, let's talk about it). I think all developers should study design, and I believe having this well-rounded education makes me a stronger developer.
 
 ---
 ## Technical Skills
-**Like:** html, css, javascript, c#, angularjs, python, jquery, asp.net, photography, photoshop, indesign, illustrator, html5, css3, node.js
+**Like:** npm, html5, css3, javascript, jsx, angularjs, react, python, jquery, photography
 
 **Dislike:** powerpoint
 
