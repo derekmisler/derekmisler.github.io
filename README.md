@@ -67,49 +67,21 @@ I chose to study graphic design in the Arts department of Appalachian State. I a
 
 ---
 
-**Full Stack Web Development**, Free Code Camp, *2015 – 2016*
-
-html5, css, twitter-bootstrap, jquery, javascript, json
-
-
-
----
-
-**High School**, A.C. Reynolds High School, *2000 – 2005*
-
-html, css, javascript, php, c++, discrete-mathematics
-
-Why would I add high school to this list? Because this is when I started my development career, over 15 years ago. I built my first website with PHP, HTML, CSS, and JavaScript in 2000 and started with Discrete Math and C++ shortly thereafter. It was here that I learned the conventions behind object-oriented programming that I still use when building web applications today.
-
----
-
 ##Certifications
 
 **Google Analytics Academy**, *2013*
-
-
-
 
 ---
 
 **edX Verified Certificate for Programming with C#**, *2015 – 2015*
 
-
-
-
 ---
 
 **Skill Completed: Learn AngularJS**, *2015 – 2015*
 
-
-
-
 ---
 
 **Advanced Topics in Python**, *2015 – 2015*
-
-
-
 
 ---
 
