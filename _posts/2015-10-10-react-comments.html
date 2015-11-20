@@ -1,0 +1,72 @@
+---
+layout: default
+title: "Reactions"
+description: "A commenting system built with React. It's based on a tutorial by Facebook. Mine is just, you know, better."
+date: 2015-10-10 13:43:45 -0400
+permalink: react-comments
+githubURL: https://github.com/derekmisler/reactions
+tags: React, JSX, AJAX
+---
+<section>
+  <article class="columns-8">
+    <p>The tutorial was fun and meant to teach the JSX syntax and how it can be implemented in React applications. The app is pretty easy, but thinking in JSX instead of vanilla JavaScript can be weird at first. Eventually you'll learn to love it.</p>
+    <h3>To use:</h3>
+{% highlight markdown %}
+$ npm install
+$ node server.js
+{% endhighlight %}
+    <p>Then, open up <a href="http://localhost:3000" target="_blank">localhost:3000</a> in your browser.</p>
+    <p>The list of comments is here:</p>
+{% highlight javascript %}
+{% raw %}
+var CommentList = React.createClass({
+  render: function() {
+    var commentNodes = this.props.data.map(function (comment) {
+      return (
+        <Comment key={comment.id} author={comment.author}>
+          {comment.text}
+        </Comment>
+      );
+    });
+    return (
+      <div className="commentList">
+        {commentNodes}
+      </div>
+    );
+  }
+});
+{% endraw %}
+{% endhighlight %}
+<p>This is what each comment looks like:</p>
+{% highlight javascript %}
+{% raw %}
+var Comment = React.createClass({
+  rawMarkup: function() {
+    var rawMarkup = marked(this.props.children.toString(), {sanitize: true});
+    return { __html: rawMarkup };
+  },
+  render: function() {
+    return (
+      <div className="comment" id={this.props.id}>
+        <h4 className="commentAuthor">
+          {this.props.author}
+        </h4>
+        <span className="commentComment" dangerouslySetInnerHTML={this.rawMarkup()} />
+      </div>
+    );
+  }
+});
+{% endraw %}
+{% endhighlight %}
+<h4>That's all I'm going to show you! You can check out the rest <a href="https://github.com/derekmisler/reactions" target="_blank">here</a>.</h4>
+</article>
+<article class="columns-4">
+    <small>Check out this action!</small>
+    <video autoplay loop>
+     <source src="{{ site.baseurl }}/images/react-comments.mov" type="video/mov">
+     <source src="{{ site.baseurl }}/images/react-comments.mp4" type="video/mp4">
+     <source src="{{ site.baseurl }}/images/react-comments.mkv" type="video/ogg">
+      Your browser does not support the <code>video</code> element.
+    </video>
+</article>
+</section>

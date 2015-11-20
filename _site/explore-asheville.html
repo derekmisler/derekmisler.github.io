@@ -68,38 +68,38 @@
 
 
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"custom_content_featured {{templateData.theme}}"</span> <span class="na">data-featured-guid=</span><span class="s">"{{guid}}"</span><span class="nt">&gt;</span>
-{{#items}}
-{{:@first}}
+<figure class="highlight"><pre><code class="language-handlebars" data-lang="handlebars"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"custom_content_featured </span><span class="k">{{</span><span class="nv">templateData</span><span class="p">.</span><span class="nv">theme</span><span class="k">}}</span><span class="s">"</span> <span class="na">data-featured-guid=</span><span class="s">"</span><span class="k">{{</span><span class="nv">guid</span><span class="k">}}</span><span class="s">"</span><span class="nt">&gt;</span>
+<span class="k">{{#</span><span class="nn">items</span><span class="k">}}</span>
+<span class="k">{{</span><span class="err">:</span><span class="na">@first</span><span class="k">}}</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row itemrow"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"medium-12 large-6 columns itemleft"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"img"</span><span class="nt">&gt;</span>
-      {{:image}}
-        {{:animated}}
+      <span class="k">{{</span><span class="err">:</span><span class="nv">image</span><span class="k">}}</span>
+        <span class="k">{{</span><span class="err">:</span><span class="nv">animated</span><span class="k">}}</span>
         <span class="nt">&lt;video</span> <span class="na">width=</span><span class="s">"100%"</span> <span class="na">autoplay</span> <span class="na">loop</span> <span class="na">muted=</span><span class="s">"muted"</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"{{image.resource.getThumbnailUrl({ height : 480, width : 640, crop : 'fill', gravity: 'center', quality: 60, fetch_format: 'mp4' })}}"</span> <span class="na">type=</span><span class="s">"video/mp4"</span><span class="nt">&gt;&lt;/source&gt;</span>
-          <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"{{image.resource.getThumbnailUrl({ height : 480, width : 640, crop : 'fill', gravity: 'center', quality: 60, fetch_format: 'png' })}}"</span><span class="nt">/&gt;</span>
+          <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"</span><span class="k">{{</span><span class="nv">image</span><span class="p">.</span><span class="nv">resource</span><span class="p">.</span><span class="nv">getThumbnailUrl</span><span class="err">({</span> <span class="nv">height</span> <span class="err">:</span> <span class="nv">480</span><span class="err">,</span> <span class="nv">width</span> <span class="err">:</span> <span class="nv">640</span><span class="err">,</span> <span class="nv">crop</span> <span class="err">:</span> <span class="s1">'fill'</span><span class="err">,</span> <span class="nv">gravity</span><span class="err">:</span> <span class="s1">'center'</span><span class="err">,</span> <span class="nv">quality</span><span class="err">:</span> <span class="nv">60</span><span class="err">,</span> <span class="nv">fetch_format</span><span class="err">:</span> <span class="s1">'mp4'</span> <span class="err">})</span><span class="k">}}</span><span class="s">"</span> <span class="na">type=</span><span class="s">"video/mp4"</span><span class="nt">&gt;&lt;/source&gt;</span>
+          <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"</span><span class="k">{{</span><span class="nv">image</span><span class="p">.</span><span class="nv">resource</span><span class="p">.</span><span class="nv">getThumbnailUrl</span><span class="err">({</span> <span class="nv">height</span> <span class="err">:</span> <span class="nv">480</span><span class="err">,</span> <span class="nv">width</span> <span class="err">:</span> <span class="nv">640</span><span class="err">,</span> <span class="nv">crop</span> <span class="err">:</span> <span class="s1">'fill'</span><span class="err">,</span> <span class="nv">gravity</span><span class="err">:</span> <span class="s1">'center'</span><span class="err">,</span> <span class="nv">quality</span><span class="err">:</span> <span class="nv">60</span><span class="err">,</span> <span class="nv">fetch_format</span><span class="err">:</span> <span class="s1">'png'</span> <span class="err">})</span><span class="k">}}</span><span class="s">"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;/video&gt;</span>
-        {{?}}
-        <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"{{image.resource.getThumbnailUrl({ height : 480, width : 640, crop : 'fill', gravity: 'center', quality: 60 })}}"</span><span class="nt">/&gt;</span>
-        {{/}}
-      {{/image}}
-      {{!image}}
+        <span class="k">{{</span><span class="err">?</span><span class="k">}}</span>
+        <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"</span><span class="k">{{</span><span class="nv">image</span><span class="p">.</span><span class="nv">resource</span><span class="p">.</span><span class="nv">getThumbnailUrl</span><span class="err">({</span> <span class="nv">height</span> <span class="err">:</span> <span class="nv">480</span><span class="err">,</span> <span class="nv">width</span> <span class="err">:</span> <span class="nv">640</span><span class="err">,</span> <span class="nv">crop</span> <span class="err">:</span> <span class="s1">'fill'</span><span class="err">,</span> <span class="nv">gravity</span><span class="err">:</span> <span class="s1">'center'</span><span class="err">,</span> <span class="nv">quality</span><span class="err">:</span> <span class="nv">60</span> <span class="err">})</span><span class="k">}}</span><span class="s">"</span><span class="nt">/&gt;</span>
+        <span class="k">{{/}}</span>
+      <span class="k">{{/</span><span class="nn">image</span><span class="k">}}</span>
+      <span class="c">{{!image}}</span>
         <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/includes/public/assets/images/default-sq.jpg"</span><span class="nt">/&gt;</span>
-      {{/image}}
+      <span class="k">{{/</span><span class="nn">image</span><span class="k">}}</span>
       <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"medium-12 large-6 columns itemright"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">"theme-color"</span> <span class="na">href=</span><span class="s">"{{url}}"</span><span class="nt">&gt;</span>{{~var.sanitize(data.title, 100, '<span class="ni">&amp;hellip;</span>')}}<span class="nt">&lt;/a&gt;&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"subtitle"</span><span class="nt">&gt;</span>{{:author}}by {{author}}{{/author}}<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">"theme-color"</span> <span class="na">href=</span><span class="s">"</span><span class="k">{{</span><span class="nv">url</span><span class="k">}}</span><span class="s">"</span><span class="nt">&gt;</span><span class="k">{{</span><span class="err">~</span><span class="nv">var</span><span class="p">.</span><span class="nv">sanitize</span><span class="err">(</span><span class="nv">data</span><span class="p">.</span><span class="nv">title</span><span class="err">,</span> <span class="nv">100</span><span class="err">,</span> <span class="s1">'&amp;hellip;'</span><span class="err">)</span><span class="k">}}</span><span class="nt">&lt;/a&gt;&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"subtitle"</span><span class="nt">&gt;</span><span class="k">{{</span><span class="err">:</span><span class="nv">author</span><span class="k">}}</span>by <span class="k">{{</span><span class="nv">author</span><span class="k">}}{{/</span><span class="nn">author</span><span class="k">}}</span><span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content-arrow theme-small-arrow"</span><span class="nt">&gt;&lt;/div&gt;</span>
-        <span class="nt">&lt;p&gt;</span>{{~var.sanitize(data.description, 550, '')}}{{:url}} <span class="ni">&amp;hellip;</span> <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"theme-color"</span> <span class="na">href=</span><span class="s">"{{url}}"</span><span class="nt">&gt;</span>more<span class="nt">&lt;/a&gt;</span>{{/url}}<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span><span class="k">{{</span><span class="err">~</span><span class="nv">var</span><span class="p">.</span><span class="nv">sanitize</span><span class="err">(</span><span class="nv">data</span><span class="p">.</span><span class="nv">description</span><span class="err">,</span> <span class="nv">550</span><span class="err">,</span> <span class="s1">''</span><span class="err">)</span><span class="k">}}{{</span><span class="err">:</span><span class="nv">url</span><span class="k">}}</span> <span class="ni">&amp;hellip;</span> <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"theme-color"</span> <span class="na">href=</span><span class="s">"</span><span class="k">{{</span><span class="nv">url</span><span class="k">}}</span><span class="s">"</span><span class="nt">&gt;</span>more<span class="nt">&lt;/a&gt;</span><span class="k">{{/</span><span class="nn">url</span><span class="k">}}</span><span class="nt">&lt;/p&gt;</span>
       <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
-{{/@first}}
-{{/items}}
+<span class="k">{{/</span><span class="na">@first</span><span class="k">}}</span>
+<span class="k">{{/</span><span class="nn">items</span><span class="k">}}</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></figure>
 
   <p>As you can see, Goatee is a fun/easy language to use and I was excited to have the opportunity to learn it during the redesign of this site. This is just one widget example; <a href="https://github.com/derekmisler/New-ExploreAsheville.com" target="_blank">check out more widgets here</a>.</p>
@@ -145,8 +145,7 @@
 		</div>
 
 		<div class="columns-8">
-			<p><a href="http://www.derekmisler.com" target="_blank">Derek is a front-end developer with a design background and over 10 years of experience.  He is also available for hire. Click here to learn more.
-</a></p>
+			<p><a href="http://www.derekmisler.com" target="_blank">Derek is a front-end developer with a design background and 10+ years of experience. He is also available for hire. Click here to learn more.</a></p>
 		</div>
 	</div>
 
