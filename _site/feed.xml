@@ -5,8 +5,8 @@
     <description>Derek is a front-end developer with a design background and 10+ years of experience. He is also available for hire. Click here to learn more.</description>
     <link>http://derekmisler.github.io/</link>
     <atom:link href="http://derekmisler.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 19 Nov 2015 20:33:17 -0500</pubDate>
-    <lastBuildDate>Thu, 19 Nov 2015 20:33:17 -0500</lastBuildDate>
+    <pubDate>Fri, 20 Nov 2015 06:33:57 -0500</pubDate>
+    <lastBuildDate>Fri, 20 Nov 2015 06:33:57 -0500</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -15,8 +15,10 @@
   &lt;article class=&quot;columns-8&quot;&gt;
     &lt;p&gt;The tutorial was fun and meant to teach the JSX syntax and how it can be implemented in React applications. The app is pretty easy, but thinking in JSX instead of vanilla JavaScript can be weird at first. Eventually you&#39;ll learn to love it.&lt;/p&gt;
     &lt;h3&gt;To use:&lt;/h3&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-markdown&quot; data-lang=&quot;markdown&quot;&gt;$ npm install
-$ node server.js&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;pre&gt;
+$ npm install
+$ node server.js
+&lt;/pre&gt;
     &lt;p&gt;Then, open up &lt;a href=&quot;http://localhost:3000&quot; target=&quot;_blank&quot;&gt;localhost:3000&lt;/a&gt; in your browser.&lt;/p&gt;
     &lt;p&gt;The list of comments is here:&lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CommentList&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;

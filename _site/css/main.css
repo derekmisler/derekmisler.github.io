@@ -106,50 +106,12 @@ a {
  */
 blockquote {
   color: #253a57;
-  border-left: 4px solid #253a57;
+  border-left: 1px solid #253a57;
   padding-left: 15px;
   font-size: 20px;
   font-style: normal; }
   blockquote > :last-child {
     margin-bottom: 0; }
-
-/**
- * Code formatting
- */
-.highlight {
-  padding: 30px 0 0 0;
-  position: relative; }
-  .highlight pre {
-    font-size: 13px;
-    background-color: #d9e2ef;
-    -webkit-transition: all 0.35s;
-    -o-transition: all 0.35s;
-    transition: all 0.35s;
-    white-space: pre-wrap;
-    white-space: -moz- pre-wrap;
-    white-space: -pre-wrap;
-    white-space: -o- pre-wrap;
-    word-wrap: break-word; }
-    .highlight pre:hover, .highlight pre:focus {
-      background-color: #ebf0f6; }
-  .highlight:after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    padding: 3.33333px 10px;
-    font-size: 15px;
-    font-style: italic;
-    color: #ebf0f6;
-    background-color: #253a57;
-    content: "Code"; }
-
-pre {
-  padding: 15px; }
-  pre > code {
-    border: 0;
-    padding-right: 0;
-    padding-left: 0; }
 
 small {
   font-style: italic;
@@ -557,12 +519,43 @@ figure {
     border-color: #D94700; }
 
 /**
+ * Code formatting
+ */
+pre {
+  background-color: #d9e2ef;
+  font-size: 15px;
+  padding: 3px;
+  margin: 0;
+  display: inline-block; }
+
+/**
  * Syntax highlighting styles
  */
 .highlight {
-  background: #fff; }
-  .highlighter-rouge .highlight {
-    background: #eef; }
+  position: relative; }
+  .highlight pre {
+    padding: 60px 30px 30px;
+    -webkit-transition: all 0.35s;
+    -o-transition: all 0.35s;
+    transition: all 0.35s;
+    white-space: pre-wrap;
+    white-space: -moz- pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o- pre-wrap;
+    word-wrap: break-word; }
+    .highlight pre:hover, .highlight pre:focus {
+      background-color: #ebf0f6; }
+  .highlight:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 3.33333px 10px;
+    font-size: 15px;
+    font-style: italic;
+    color: #ebf0f6;
+    background-color: #253a57;
+    content: "Code Example"; }
   .highlight .c {
     color: #998;
     font-style: italic; }

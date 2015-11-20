@@ -8,8 +8,6 @@ dl, dd, ol, ul, figure {
   padding: 0;
 }
 
-
-
 /**
  * Basic styling
  */
@@ -25,8 +23,6 @@ body {
   font-kerning: normal;
 }
 
-
-
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
@@ -38,8 +34,6 @@ ul, ol, dl,
   text-rendering: optimizeLegibility;
 }
 
-
-
 /**
  * Images
  */
@@ -48,8 +42,6 @@ video{
   max-width: 100%;
   vertical-align: middle;
 }
-
-
 
 /**
  * Figures
@@ -61,8 +53,6 @@ figure > img {
 figcaption {
   font-size: $small-font-size;
 }
-
-
 
 /**
  * Lists
@@ -77,8 +67,6 @@ li {
      margin-bottom: 0;
   }
 }
-
-
 
 /**
  * Headings
@@ -119,14 +107,12 @@ a {
   }
 }
 
-
-
 /**
  * Blockquotes
  */
 blockquote {
   color: $heading-color;
-  border-left: 4px solid $heading-color;
+  border-left: 1px solid $heading-color;
   padding-left: $spacing-unit / 2;
   font-size: $base-font-size;
   font-style: normal;
@@ -136,53 +122,6 @@ blockquote {
   }
 }
 
-
-
-/**
- * Code formatting
- */
-.highlight{
-  padding: $spacing-unit 0 0 0;
-  position: relative;
-  pre {
-    font-size: 13px;
-    background-color: $grey-color;
-    @include transition(all .35s);
-    @include white-space(pre-wrap);
-    
-    &:hover,
-    &:focus {
-      background-color: $grey-color-light;
-    }
-  }
-  &:after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    padding: ($spacing-unit/9) ($spacing-unit/3);
-    font-size: $small-font-size;
-    font-style: italic;
-    color: $grey-color-light;
-    background-color: $heading-color;
-    content: "Code";
-  }
-}
-code {
-  
-}
-
-pre {
-  padding: $spacing-unit / 2;
-
-  > code {
-    border: 0;
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
-
-
 small {
   font-style: italic;
   font-size: $small-font-size;
@@ -190,8 +129,6 @@ small {
   margin: 0;
   padding: 0;
 }
-
-
 
 /**
  * Wrapper
@@ -211,15 +148,12 @@ small {
  * Clearfix
  */
 %clearfix {
-
   &:after {
     content: "";
     display: table;
     clear: both;
   }
 }
-
-
 
 /**
  * Icons
