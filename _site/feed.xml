@@ -5,8 +5,8 @@
     <description>Derek is a front-end developer with a design background and 10+ years of experience. He is also available for hire. Click here to learn more.</description>
     <link>http://derekmisler.github.io/</link>
     <atom:link href="http://derekmisler.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 23 Nov 2015 15:53:42 -0500</pubDate>
-    <lastBuildDate>Mon, 23 Nov 2015 15:53:42 -0500</lastBuildDate>
+    <pubDate>Mon, 23 Nov 2015 16:12:24 -0500</pubDate>
+    <lastBuildDate>Mon, 23 Nov 2015 16:12:24 -0500</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -372,8 +372,7 @@ $ node server.js
 &lt;span class=&quot;nx&quot;&gt;thumbnail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;each&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fadeTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-
+&lt;p&gt;Results:&lt;/p&gt;
 &lt;section id=&quot;tumblr&quot;&gt;
   &lt;ul class=&quot;block-grid-4&quot;&gt;&lt;/ul&gt;
 &lt;/section&gt;
@@ -390,8 +389,10 @@ $ node server.js
       var text = &#39;&#39;;
       for (var i in postings) {
         var p = postings[i];
-        var image = p.photos[0].alt_sizes[2];
-        text += &#39;&lt;li&gt;&lt;a href=&quot;&#39; + p.post_url + &#39;&quot; target=&quot;_blank&quot; style=&quot;background-image: url(&#39; + image.url + &#39;)&quot;&gt;&lt;/a&gt;&lt;/li&gt;&#39;;
+        if (p.photos != undefined) {
+          var image = p.photos[0].alt_sizes[2];
+          text += &#39;&lt;li&gt;&lt;a href=&quot;&#39; + p.post_url + &#39;&quot; target=&quot;_blank&quot; style=&quot;background-image: url(&#39; + image.url + &#39;)&quot;&gt;&lt;/a&gt;&lt;/li&gt;&#39;;
+        }
       }
       $(&#39;#tumblr ul&#39;).append(text);
       thumbnail = $(&#39;#tumblr&#39;).find(&#39;a&#39;),

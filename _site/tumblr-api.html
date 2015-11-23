@@ -82,8 +82,7 @@
 <span class="nx">thumbnail</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">delay</span><span class="p">((</span><span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">).</span><span class="nx">fadeTo</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 <span class="p">});</span></code></pre></figure>
-
-
+<p>Results:</p>
 <section id="tumblr">
   <ul class="block-grid-4"></ul>
 </section>
@@ -100,8 +99,10 @@
       var text = '';
       for (var i in postings) {
         var p = postings[i];
-        var image = p.photos[0].alt_sizes[2];
-        text += '<li><a href="' + p.post_url + '" target="_blank" style="background-image: url(' + image.url + ')"></a></li>';
+        if (p.photos != undefined) {
+          var image = p.photos[0].alt_sizes[2];
+          text += '<li><a href="' + p.post_url + '" target="_blank" style="background-image: url(' + image.url + ')"></a></li>';
+        }
       }
       $('#tumblr ul').append(text);
       thumbnail = $('#tumblr').find('a'),

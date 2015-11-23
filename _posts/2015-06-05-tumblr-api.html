@@ -36,8 +36,7 @@ thumbnail.each(function(i) {
   $(this).delay((i++) * 100).fadeTo(200, 1);
 });
 {% endhighlight %}
-
-
+<p>Results:</p>
 <section id="tumblr">
   <ul class="block-grid-4"></ul>
 </section>
@@ -54,8 +53,10 @@ thumbnail.each(function(i) {
       var text = '';
       for (var i in postings) {
         var p = postings[i];
-        var image = p.photos[0].alt_sizes[2];
-        text += '<li><a href="' + p.post_url + '" target="_blank" style="background-image: url(' + image.url + ')"></a></li>';
+        if (p.photos != undefined) {
+          var image = p.photos[0].alt_sizes[2];
+          text += '<li><a href="' + p.post_url + '" target="_blank" style="background-image: url(' + image.url + ')"></a></li>';
+        }
       }
       $('#tumblr ul').append(text);
       thumbnail = $('#tumblr').find('a'),
