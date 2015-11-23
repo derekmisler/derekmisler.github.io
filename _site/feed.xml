@@ -5,12 +5,12 @@
     <description>Derek is a front-end developer with a design background and 10+ years of experience. He is also available for hire. Click here to learn more.</description>
     <link>http://derekmisler.github.io/</link>
     <atom:link href="http://derekmisler.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 23 Nov 2015 16:12:24 -0500</pubDate>
-    <lastBuildDate>Mon, 23 Nov 2015 16:12:24 -0500</lastBuildDate>
+    <pubDate>Mon, 23 Nov 2015 18:18:25 -0500</pubDate>
+    <lastBuildDate>Mon, 23 Nov 2015 18:18:25 -0500</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
-        <title>Reactions</title>
+        <title>React Comments aka Reactions</title>
         <description>&lt;section&gt;
   &lt;article class=&quot;columns-8&quot;&gt;
     &lt;p&gt;The tutorial was fun and meant to teach the JSX syntax and how it can be implemented in React applications. The app is pretty easy, but thinking in JSX instead of vanilla JavaScript can be weird at first. Eventually you&#39;ll learn to love it.&lt;/p&gt;
@@ -80,7 +80,7 @@ $ node server.js
       </item>
     
       <item>
-        <title>Explore Asheville</title>
+        <title>Redesigning Explore Asheville</title>
         <description>&lt;section class=&quot;&quot;&gt;
   &lt;article class=&quot;columns-8&quot;&gt;
     &lt;p&gt;The &lt;a href=&quot;http://www.exploreasheville.com&quot; target=&quot;_blank&quot;&gt;ExploreAsheville.com&lt;/a&gt; website is the primary web presence for the Visitors Bureau and the linchpin for their marketing efforts. Working with the Bureau&#39;s ad agency, we started the design process with the homepage. The design was meant to mimic a magazine layout, including full-width images/video and featured profiles, representative of the editorial placements Asheville receives.&lt;/p&gt;
