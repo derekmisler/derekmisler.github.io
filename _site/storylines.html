@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Long-Form Storytelling | Selected works created by Derek Misler.</title>
+	<meta name="description" content="These two projects for the Asheville Convention &amp; Visitors Bureau, Explorers of the Blue Ridge Parkway and The Science Behind Fall Color, were inspired by a Pulitzer Prize-winning multimedia piece from the New York Times called "Snow Fall: The Avalanche at Tunnel Creek." We had writers and a photographer, but the design and development was my role.">
+	
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,300italic,700,700italic|Playfair+Display:700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="canonical" href="http://derekmisler.github.io/storylines">
+	<link rel="alternate" type="application/rss+xml" title="Projects by Derek" href="http://derekmisler.github.io/feed.xml">
+</head>
+
+
+  <body>
+
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N2C864"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-N2C864');</script>
+	<!-- End Google Tag Manager -->
+
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <h1 class="site-title">
+    
+    <a title="Home" href="/">Long-Form Storytelling</a>
+    
+    </a>
+    </h1>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+      
+        <div class="description">
+          <p>Two award-winning, multimedia, long-form editorial pieces.<br>
+          <strong>Tools Utilized:</strong> HTML5, CSS3, Less, jQuery, Looping Video, Responsive Design, Bootstrap </p>
+          
+          <h4 class="site-project-link"><a href="https://github.com/derekmisler/Storylines" target="_blank">View this project on GitHub</a></h4>
+          
+        </div>
+        
+
+        <p>These two projects for the Asheville Convention &amp; Visitors Bureau, <a href="http://www.exploreasheville.com/blue-ridge-parkway/" target="_blank">Explorers of the Blue Ridge Parkway</a> and <a href="http://www.exploreasheville.com/science-behind-fall-color/" target="_blank">The Science Behind Fall Color</a>, were inspired by a Pulitzer Prize-winning multimedia piece from the New York Times called "<a href="http://www.nytimes.com/projects/2012/snow-fall/" target="_blank">Snow Fall: The Avalanche at Tunnel Creek</a>." We had writers and a photographer, but the design and development was my role.</p>
+
+<p>The Blue Ridge Parkway project used a lot of full-width, looping videos at the top of each section. Instead of loading and playing them automatically, they wait until the user has scrolled to the videos:</p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">scroll</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">'scrollTimer'</span><span class="p">));</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">'scrollTimer'</span><span class="p">,</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'video'</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":in-viewport"</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">play</span><span class="p">();</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">pause</span><span class="p">();</span>
+      <span class="p">}</span>
+    <span class="p">})</span>
+  <span class="p">},</span> <span class="mi">250</span><span class="p">));</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>The Fall Color project was our first long-form editorial piece, so to ensure reading to the end, we have a little "Keep Scrolling" tab that pops up if the user hasn't interacted with the page in 8 seconds (which is the average amount of time it takes people in the office to read a page of text).</p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">scroll</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">keepscrolling</span><span class="p">.</span><span class="nx">stop</span><span class="p">().</span><span class="nx">transition</span><span class="p">({</span><span class="na">opacity</span><span class="p">:</span><span class="mi">0</span><span class="p">},</span> <span class="mi">250</span><span class="p">);</span>
+  <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">'scrollTimer'</span><span class="p">));</span>
+  <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">keepscrolling</span><span class="p">.</span><span class="nx">stop</span><span class="p">().</span><span class="nx">transition</span><span class="p">({</span><span class="na">opacity</span><span class="p">:</span><span class="mi">0</span><span class="p">},</span> <span class="mi">250</span><span class="p">);</span>
+    <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">'scrollTimer'</span><span class="p">));</span>
+  <span class="p">});</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">'scrollTimer'</span><span class="p">,</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">scrollTop</span><span class="p">()</span> <span class="o">+</span> <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">height</span><span class="p">()</span> <span class="o">!=</span> <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">height</span><span class="p">())</span> <span class="p">{</span>
+      <span class="nx">keepscrolling</span><span class="p">.</span><span class="nx">stop</span><span class="p">().</span><span class="nx">transition</span><span class="p">({</span><span class="na">opacity</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">},</span> <span class="mi">8000</span><span class="p">));</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>We're also measuring the distance the user scrolls down the page. This is part of a plugin for Google Tag Manager that fires an Event when the user hits a certain percentage of the page (<em><a href="https://github.com/derekmisler/derekmisler.com/blob/master/view/js/scroll-tracking.js" target="_blank">The rest can be seen here</a></em>):</p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">calculateMarks</span><span class="p">(</span><span class="nx">docHeight</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="s1">'25%'</span> <span class="p">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">docHeight</span> <span class="o">*</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="s1">'50%'</span> <span class="p">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">docHeight</span> <span class="o">*</span> <span class="mf">0.50</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="s1">'75%'</span> <span class="p">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">docHeight</span> <span class="o">*</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="c1">// 1px cushion to trigger 100% event in iOS</span>
+    <span class="s1">'100%'</span><span class="p">:</span> <span class="nx">docHeight</span> <span class="o">-</span> <span class="mi">1</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">checkMarks</span><span class="p">(</span><span class="nx">marks</span><span class="p">,</span> <span class="nx">scrollDistance</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Check each active mark</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">marks</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="nx">$</span><span class="p">.</span><span class="nx">inArray</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">cache</span><span class="p">)</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nx">scrollDistance</span> <span class="o">&gt;=</span> <span class="nx">val</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="nx">sendEvent</span><span class="p">(</span><span class="s1">'Percentage'</span><span class="p">,</span> <span class="nx">key</span><span class="p">);</span>
+      <span class="nx">cache</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">}</span></code></pre></figure>
+<p></p>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+	<div class="wrapper">
+		<div class="columns-4">
+			<ul class="contact-list">
+				
+				<li>
+					<a href="mailto:derekmisler@gmail.com">derekmisler@gmail.com</a>
+				</li>
+				
+
+				
+				<li>
+					<a target="_blank" href="https://www.linkedin.com/in/derekmisler"><span class="icon icon--linkedin"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="144px" height="144px" viewBox="0 0 144 144" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.1 (15681) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M133.343,0 L10.629,0 C4.765,0 0,4.648 0,10.379 L0,133.609 C0,139.345 4.765,144 10.629,144 L133.343,144 C139.217,144 144.002,139.345 144.002,133.609 L144.002,10.379 C144.002,4.648 139.217,0 133.343,0 Z M122.706,122.707 L101.362,122.707 L101.362,89.288 C101.362,81.315 101.216,71.065 90.264,71.065 C79.149,71.065 77.447,79.747 77.447,88.711 L77.447,122.707 L56.104,122.707 L56.104,53.986 L76.593,53.986 L76.593,63.375 L76.877,63.375 C79.727,57.973 86.694,52.276 97.085,52.276 C118.713,52.276 122.706,66.509 122.706,85.012 L122.706,122.707 Z M32.034,44.592 C25.188,44.592 19.647,39.041 19.647,32.205 C19.647,25.374 25.188,19.825 32.034,19.825 C38.862,19.825 44.411,25.374 44.411,32.205 C44.411,39.041 38.862,44.592 32.034,44.592 Z M21.35,53.986 L42.709,53.986 L42.709,122.707 L21.35,122.707 L21.35,53.986 Z" id="Fill-1" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg></span><span class="username">&nbsp;derekmisler</span></a>
+
+				</li>
+				
+			</ul>
+		</div>
+
+		<div class="columns-8">
+			<p><a href="http://www.derekmisler.com" target="_blank">Derek is a front-end developer with a design background and 10+ years of experience. He is also available for hire. Click here to learn more.</a></p>
+		</div>
+	</div>
+
+</footer>
+
+
+  </body>
+</html>
