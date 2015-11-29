@@ -135,7 +135,7 @@ small {
 /**
  * Clearfix
  */
-.wrapper:after, .description:after, [class*="block-grid-"]:after {
+.wrapper:after, .row:after, .description:after, [class*="block-grid-"]:after {
   content: "";
   display: table;
   clear: both; }
@@ -558,9 +558,6 @@ pre {
   .highlight .c {
     color: #998;
     font-style: italic; }
-  .highlight .err {
-    color: #a61717;
-    background-color: #e3d2d2; }
   .highlight .k {
     font-weight: bold; }
   .highlight .o {
@@ -609,12 +606,16 @@ pre {
   .highlight .k {
     color: #008080; }
   .highlight .kc {
+    color: #008080;
     font-weight: bold; }
   .highlight .kd {
+    color: #008080;
     font-weight: bold; }
   .highlight .kp {
+    color: #008080;
     font-weight: bold; }
   .highlight .kr {
+    color: #008080;
     font-weight: bold; }
   .highlight .kt {
     color: #458;

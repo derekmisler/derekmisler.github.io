@@ -60,20 +60,6 @@
 
         <p>These two projects for the Asheville Convention &amp; Visitors Bureau, <a href="http://www.exploreasheville.com/blue-ridge-parkway/" target="_blank">Explorers of the Blue Ridge Parkway</a> and <a href="http://www.exploreasheville.com/science-behind-fall-color/" target="_blank">The Science Behind Fall Color</a>, were inspired by a Pulitzer Prize-winning multimedia piece from the New York Times called "<a href="http://www.nytimes.com/projects/2012/snow-fall/" target="_blank">Snow Fall: The Avalanche at Tunnel Creek</a>." We had writers and a photographer, but the design and development was my role.</p>
 
-<p>The Blue Ridge Parkway project used a lot of full-width, looping videos at the top of each section. Instead of loading and playing them automatically, they wait until the user has scrolled to the videos:</p>
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">scroll</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">'scrollTimer'</span><span class="p">));</span>
-  <span class="nx">$</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">'scrollTimer'</span><span class="p">,</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">'video'</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":in-viewport"</span><span class="p">))</span> <span class="p">{</span>
-        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">play</span><span class="p">();</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">pause</span><span class="p">();</span>
-      <span class="p">}</span>
-    <span class="p">})</span>
-  <span class="p">},</span> <span class="mi">250</span><span class="p">));</span>
-<span class="p">});</span></code></pre></figure>
-
 <p>The Fall Color project was our first long-form editorial piece, so to ensure reading to the end, we have a little "Keep Scrolling" tab that pops up if the user hasn't interacted with the page in 8 seconds (which is the average amount of time it takes people in the office to read a page of text).</p>
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">scroll</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="nx">keepscrolling</span><span class="p">.</span><span class="nx">stop</span><span class="p">().</span><span class="nx">transition</span><span class="p">({</span><span class="na">opacity</span><span class="p">:</span><span class="mi">0</span><span class="p">},</span> <span class="mi">250</span><span class="p">);</span>
@@ -89,7 +75,7 @@
   <span class="p">},</span> <span class="mi">8000</span><span class="p">));</span>
 <span class="p">});</span></code></pre></figure>
 
-<p>We're also measuring the distance the user scrolls down the page. This is part of a plugin for Google Tag Manager that fires an Event when the user hits a certain percentage of the page (<em><a href="https://github.com/derekmisler/derekmisler.com/blob/master/view/js/scroll-tracking.js" target="_blank">The rest can be seen here</a></em>):</p>
+<p>We're also measuring the distance the user scrolls down the page. This is part of a plugin for Google Tag Manager that fires an Event when the user hits a certain percentage of the page (<em><a href="https://github.com/derekmisler/derekmisler.com/blob/master/view/js/scroll-tracking.js" target="_blank">the rest can be seen here</a></em>):</p>
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">calculateMarks</span><span class="p">(</span><span class="nx">docHeight</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">{</span>
     <span class="s1">'25%'</span> <span class="p">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">docHeight</span> <span class="o">*</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
@@ -108,7 +94,53 @@
     <span class="p">}</span>
   <span class="p">});</span>
 <span class="p">}</span></code></pre></figure>
-<p></p>
+
+<p>The Blue Ridge Parkway project used a lot of full-width, looping videos at the top of each section. Instead of loading and playing them all automatically, they wait until they are visible:</p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">scroll</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">'scrollTimer'</span><span class="p">));</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">'scrollTimer'</span><span class="p">,</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'video'</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s2">":in-viewport"</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">play</span><span class="p">();</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">pause</span><span class="p">();</span>
+      <span class="p">}</span>
+    <span class="p">})</span>
+  <span class="p">},</span> <span class="mi">250</span><span class="p">));</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Even though jQuery is used to handle user interaction in both of these projects, I learned to let CSS handle the animation in the second project. Compared to jQuery's <code>.animate()</code>, CSS animations were a lot faster. For example, here is how I handled the navigation on the left-hand side:</p>
+<section class="row">
+<aside class="columns-6">
+<small>JavaScript</small>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">activate</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">element</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">'active'</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">deactivate</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">element</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">'active'</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">...</span>
+<span class="nx">leftNavigation</span><span class="p">.</span><span class="nx">hover</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">activate</span><span class="p">(</span><span class="nx">leftNavToggle</span><span class="p">);</span>
+<span class="p">},</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">deactivate</span><span class="p">(</span><span class="nx">leftNavToggle</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+</aside>
+<aside class="columns-6">
+<small>LESS</small>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@leftnavwidth</span><span class="p">:</span> <span class="m">300px</span><span class="err">+</span><span class="p">(</span><span class="err">@</span><span class="n">default-padding</span><span class="err">*</span><span class="m">4</span><span class="p">);</span>
+<span class="nc">.navigation.left</span> <span class="p">{</span>
+  <span class="nl">left</span><span class="p">:</span> <span class="n">-</span><span class="p">(</span><span class="err">@</span><span class="n">leftnavwidth</span><span class="p">);</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="err">@</span><span class="n">leftnavwidth</span><span class="p">;</span>
+  <span class="err">.transition(all</span> <span class="err">@slow-transition-timing);</span>
+  <span class="err">...</span>
+  <span class="err">&amp;.active</span> <span class="err">{</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="err">}</span></code></pre></figure>
+</aside>
+</section>
+<!-- <h3 id="learning">Some things I've learned</h3> -->
       </div>
     </div>
 

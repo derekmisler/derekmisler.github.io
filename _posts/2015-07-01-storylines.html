@@ -9,24 +9,6 @@ tags: HTML5, CSS3, Less, jQuery, Looping Video, Responsive Design, Bootstrap
 ---
 <p>These two projects for the Asheville Convention &amp; Visitors Bureau, <a href="http://www.exploreasheville.com/blue-ridge-parkway/" target="_blank">Explorers of the Blue Ridge Parkway</a> and <a href="http://www.exploreasheville.com/science-behind-fall-color/" target="_blank">The Science Behind Fall Color</a>, were inspired by a Pulitzer Prize-winning multimedia piece from the New York Times called "<a href="http://www.nytimes.com/projects/2012/snow-fall/" target="_blank">Snow Fall: The Avalanche at Tunnel Creek</a>." We had writers and a photographer, but the design and development was my role.</p>
 
-<p>The Blue Ridge Parkway project used a lot of full-width, looping videos at the top of each section. Instead of loading and playing them automatically, they wait until the user has scrolled to the videos:</p>
-{% highlight javascript %}
-{% raw %}
-$(window).scroll(function() {
-  clearTimeout($.data(this, 'scrollTimer'));
-  $.data(this, 'scrollTimer', setTimeout(function() {
-    $('video').each(function(){
-      if ($(this).is(":in-viewport")) {
-        $(this)[0].play();
-      } else {
-        $(this)[0].pause();
-      }
-    })
-  }, 250));
-});
-{% endraw %}
-{% endhighlight %}
-
 <p>The Fall Color project was our first long-form editorial piece, so to ensure reading to the end, we have a little "Keep Scrolling" tab that pops up if the user hasn't interacted with the page in 8 seconds (which is the average amount of time it takes people in the office to read a page of text).</p>
 {% highlight javascript %}
 {% raw %}
@@ -46,7 +28,7 @@ $(window).scroll(function() {
 {% endraw %}
 {% endhighlight %}
 
-<p>We're also measuring the distance the user scrolls down the page. This is part of a plugin for Google Tag Manager that fires an Event when the user hits a certain percentage of the page (<em><a href="https://github.com/derekmisler/derekmisler.com/blob/master/view/js/scroll-tracking.js" target="_blank">The rest can be seen here</a></em>):</p>
+<p>We're also measuring the distance the user scrolls down the page. This is part of a plugin for Google Tag Manager that fires an Event when the user hits a certain percentage of the page (<em><a href="https://github.com/derekmisler/derekmisler.com/blob/master/view/js/scroll-tracking.js" target="_blank">the rest can be seen here</a></em>):</p>
 {% highlight javascript %}
 {% raw %}
 function calculateMarks(docHeight) {
@@ -69,4 +51,60 @@ function checkMarks(marks, scrollDistance) {
 }
 {% endraw %}
 {% endhighlight %}
-<p></p>
+
+<p>The Blue Ridge Parkway project used a lot of full-width, looping videos at the top of each section. Instead of loading and playing them all automatically, they wait until they are visible:</p>
+{% highlight javascript %}
+{% raw %}
+$(window).scroll(function() {
+  clearTimeout($.data(this, 'scrollTimer'));
+  $.data(this, 'scrollTimer', setTimeout(function() {
+    $('video').each(function(){
+      if ($(this).is(":in-viewport")) {
+        $(this)[0].play();
+      } else {
+        $(this)[0].pause();
+      }
+    })
+  }, 250));
+});
+{% endraw %}
+{% endhighlight %}
+
+<p>Even though jQuery is used to handle user interaction in both of these projects, I learned to let CSS handle the animation in the second project. Compared to jQuery's <code>.animate()</code>, CSS animations were a lot faster. For example, here is how I handled the navigation on the left-hand side:</p>
+<section class="row">
+<aside class="columns-6">
+<small>JavaScript</small>
+{% highlight javascript %}
+{% raw %}
+function activate(element) {
+  element.addClass('active');
+}
+function deactivate(element) {
+  element.removeClass('active');
+}
+...
+leftNavigation.hover(function () {
+  activate(leftNavToggle);
+}, function () {
+  deactivate(leftNavToggle);
+});
+{% endraw %}
+{% endhighlight %}
+</aside>
+<aside class="columns-6">
+<small>LESS</small>
+{% highlight css %}
+@leftnavwidth: 300px+(@default-padding*4);
+.navigation.left {
+  left: -(@leftnavwidth);
+  width: @leftnavwidth;
+  .transition(all @slow-transition-timing);
+  ...
+  &.active {
+    left: 0;
+  }
+}
+{% endhighlight %}
+</aside>
+</section>
+<!-- <h3 id="learning">Some things I've learned</h3> -->
