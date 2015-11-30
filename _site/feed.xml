@@ -5,8 +5,8 @@
     <description>Derek is a front-end developer with a design background and 10+ years of experience. He is also available for hire. Click here to learn more.</description>
     <link>http://derekmisler.github.io/</link>
     <atom:link href="http://derekmisler.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 29 Nov 2015 15:53:31 -0500</pubDate>
-    <lastBuildDate>Sun, 29 Nov 2015 15:53:31 -0500</lastBuildDate>
+    <pubDate>Sun, 29 Nov 2015 20:10:19 -0500</pubDate>
+    <lastBuildDate>Sun, 29 Nov 2015 20:10:19 -0500</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -308,7 +308,8 @@ $ node server.js
 &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;/aside&gt;
 &lt;/section&gt;
-&lt;!-- &lt;h3 id=&quot;learning&quot;&gt;Some things I&#39;ve learned&lt;/h3&gt; --&gt;</description>
+&lt;h3 id=&quot;learning&quot;&gt;Some things I&#39;ve learned&lt;/h3&gt;
+&lt;p&gt;Even though the purpose of these projects was to contain everything on a single page, the load times were pretty high, especially the Blue Ridge Parkway project that has 10 embedded videos. There are better ways, that I&#39;ve learned in the years since these projects, to seamlessly load new content without effecting the user experience.&lt;/p&gt;</description>
         <pubDate>Wed, 30 Sep 2015 13:43:45 -0400</pubDate>
         <link>http://derekmisler.github.io/storylines</link>
         <guid isPermaLink="true">http://derekmisler.github.io/storylines</guid>
