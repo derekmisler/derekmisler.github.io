@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects by Derek</title>
-    <description>Derek is a front-end developer with a design background and 10+ years of experience. He is also available for hire. Click here to learn more.</description>
+    <description>Derek is a front-end developer with a design background and 10+ years of experience.</description>
     <link>http://derekmisler.github.io/</link>
     <atom:link href="http://derekmisler.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 29 Nov 2015 20:10:19 -0500</pubDate>
-    <lastBuildDate>Sun, 29 Nov 2015 20:10:19 -0500</lastBuildDate>
+    <pubDate>Tue, 01 Dec 2015 12:54:43 -0500</pubDate>
+    <lastBuildDate>Tue, 01 Dec 2015 12:54:43 -0500</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
