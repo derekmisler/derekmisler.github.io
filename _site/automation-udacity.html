@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Gulp Automation | Selected works created by Derek Misler.</title>
+	<meta name="description" content="Coming from Grunt, I was pretty excited to try out Gulp since reading about how much faster it can be. This project is a pretty good base to start with if you'll be building an HTML, JavaScript, and Sass project. This project starts with the 7-1 Pattern for the Sass architecture, and Typeplate for the typographic baseline. All of it is autoprefixed and minified, and the output is put in the dist/css folder.">
+	
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,300italic,700,700italic|Playfair+Display:700|Ubuntu+Mono:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="canonical" href="http://derekmisler.github.io/automation-udacity">
+	<link rel="alternate" type="application/rss+xml" title="Projects by Derek" href="http://derekmisler.github.io/feed.xml">
+</head>
+
+
+  <body>
+
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N2C864"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-N2C864');</script>
+	<!-- End Google Tag Manager -->
+
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <h1 class="site-title">
+    
+    <a title="Home" href="/">Gulp Automation</a>
+    
+    </a>
+    </h1>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+      
+        <div class="description">
+          <p>This is from an 'Automation and Web Tooling' course from Udacity.<br>
+          <strong>Tools Utilized:</strong> Gulp, Sass, 7-1 Pattern, Typeplate, Image Optimization, Concatination and Minification </p>
+          
+          <h4 class="site-project-link"><a href="https://github.com/derekmisler/automation-udacity" target="_blank">View this project on GitHub</a></h4>
+          
+        </div>
+        
+
+        <p>Coming from Grunt, I was pretty excited to try out Gulp since reading about how much faster it can be. This project is a pretty good base to start with if you'll be building an HTML, JavaScript, and Sass project. This project starts with the <a href="http://sass-guidelin.es/#the-7-1-pattern" target="_blank">7-1 Pattern</a> for the Sass architecture, and <a href="http://typeplate.com/" target="_blank">Typeplate</a> for the typographic baseline. All of it is autoprefixed and minified, and the output is put in the <code>dist/css</code> folder.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'styles'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'stylesheets/main.scss'</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sass</span><span class="p">().</span><span class="nx">on</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="nx">sass</span><span class="p">.</span><span class="nx">logError</span><span class="p">))</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">autoprefixer</span><span class="p">({</span>
+        <span class="na">browsers</span><span class="p">:</span> <span class="p">[</span><span class="s1">'last 2 versions'</span><span class="p">]</span>
+      <span class="p">}))</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sass</span><span class="p">({</span><span class="na">outputStyle</span><span class="p">:</span> <span class="s1">'compressed'</span><span class="p">}))</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'dist/css'</span><span class="p">))</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">browserSync</span><span class="p">.</span><span class="nx">stream</span><span class="p">());</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>The JavaScript is linted and set up for ES6 with <code>babel</code>, if you're into that. It's then concatinated and minified, but with sourcemaps so you can debug in your browser's developer tools.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'scripts-dist'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'js/**/*.js'</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sourcemaps</span><span class="p">.</span><span class="nx">init</span><span class="p">())</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">babel</span><span class="p">())</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">concat</span><span class="p">(</span><span class="s1">'scripts.min.js'</span><span class="p">))</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">uglify</span><span class="p">())</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sourcemaps</span><span class="p">.</span><span class="nx">write</span><span class="p">())</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'dist/js'</span><span class="p">));</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Last, but not least, there is PNG optimization.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'copy-images'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'img/*'</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">imagemin</span><span class="p">({</span>
+        <span class="na">progressive</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">use</span><span class="p">:</span> <span class="p">[</span><span class="nx">pngquant</span><span class="p">()]</span>
+      <span class="p">}))</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'dist/img'</span><span class="p">));</span>
+<span class="p">});</span></code></pre></figure>
+<h4>Check out the whole thing and learn how to run it yourself in the <a href="https://github.com/derekmisler/automation-udacity" target="_blank">repository</a>.</h4>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+	<div class="wrapper">
+		<div class="columns-4">
+			<ul class="contact-list">
+				
+				<li>
+					<a href="mailto:derekmisler@gmail.com">derekmisler@gmail.com</a>
+				</li>
+				
+
+				
+				<li>
+					<a target="_blank" href="https://www.linkedin.com/in/derekmisler"><span class="icon icon--linkedin"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="144px" height="144px" viewBox="0 0 144 144" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.1 (15681) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M133.343,0 L10.629,0 C4.765,0 0,4.648 0,10.379 L0,133.609 C0,139.345 4.765,144 10.629,144 L133.343,144 C139.217,144 144.002,139.345 144.002,133.609 L144.002,10.379 C144.002,4.648 139.217,0 133.343,0 Z M122.706,122.707 L101.362,122.707 L101.362,89.288 C101.362,81.315 101.216,71.065 90.264,71.065 C79.149,71.065 77.447,79.747 77.447,88.711 L77.447,122.707 L56.104,122.707 L56.104,53.986 L76.593,53.986 L76.593,63.375 L76.877,63.375 C79.727,57.973 86.694,52.276 97.085,52.276 C118.713,52.276 122.706,66.509 122.706,85.012 L122.706,122.707 Z M32.034,44.592 C25.188,44.592 19.647,39.041 19.647,32.205 C19.647,25.374 25.188,19.825 32.034,19.825 C38.862,19.825 44.411,25.374 44.411,32.205 C44.411,39.041 38.862,44.592 32.034,44.592 Z M21.35,53.986 L42.709,53.986 L42.709,122.707 L21.35,122.707 L21.35,53.986 Z" id="Fill-1" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg></span><span class="username">&nbsp;derekmisler</span></a>
+
+				</li>
+				
+			</ul>
+		</div>
+
+		<div class="columns-8">
+			<p><a href="http://www.derekmisler.com" target="_blank">Derek is a front-end developer with a design background and 10+ years of experience.</a></p>
+		</div>
+	</div>
+
+</footer>
+
+
+  </body>
+</html>

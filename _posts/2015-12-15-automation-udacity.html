@@ -1,0 +1,57 @@
+---
+layout: default
+title:  "Gulp Automation"
+description: "This is from an 'Automation and Web Tooling' course from Udacity."
+date:   2015-10-15 13:43:45 -0400
+permalink: automation-udacity
+githubURL: https://github.com/derekmisler/automation-udacity
+tags: Gulp, Sass, 7-1 Pattern, Typeplate, Image Optimization, Concatination and Minification
+---
+<p>Coming from Grunt, I was pretty excited to try out Gulp since reading about how much faster it can be. This project is a pretty good base to start with if you'll be building an HTML, JavaScript, and Sass project. This project starts with the <a href="http://sass-guidelin.es/#the-7-1-pattern" target="_blank">7-1 Pattern</a> for the Sass architecture, and <a href="http://typeplate.com/" target="_blank">Typeplate</a> for the typographic baseline. All of it is autoprefixed and minified, and the output is put in the <code>dist/css</code> folder.</p>
+
+{% highlight javascript %}
+{% raw %}
+gulp.task('styles', function () {
+  return gulp.src('stylesheets/main.scss')
+      .pipe(sass().on('error', sass.logError))
+      .pipe(autoprefixer({
+        browsers: ['last 2 versions']
+      }))
+      .pipe(sass({outputStyle: 'compressed'}))
+      .pipe(gulp.dest('dist/css'))
+      .pipe(browserSync.stream());
+});
+{% endraw %}
+{% endhighlight %}
+
+<p>The JavaScript is linted and set up for ES6 with <code>babel</code>, if you're into that. It's then concatinated and minified, but with sourcemaps so you can debug in your browser's developer tools.</p>
+
+{% highlight javascript %}
+{% raw %}
+gulp.task('scripts-dist', function() {
+  gulp.src('js/**/*.js')
+      .pipe(sourcemaps.init())
+      .pipe(babel())
+      .pipe(concat('scripts.min.js'))
+      .pipe(uglify())
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest('dist/js'));
+});
+{% endraw %}
+{% endhighlight %}
+
+<p>Last, but not least, there is PNG optimization.</p>
+
+{% highlight javascript %}
+{% raw %}
+gulp.task('copy-images', function() {
+  return gulp.src('img/*')
+      .pipe(imagemin({
+        progressive: true,
+        use: [pngquant()]
+      }))
+      .pipe(gulp.dest('dist/img'));
+});
+{% endraw %}
+{% endhighlight %}
+<h4>Check out the whole thing and learn how to run it yourself in the <a href="https://github.com/derekmisler/automation-udacity" target="_blank">repository</a>.</h4>
